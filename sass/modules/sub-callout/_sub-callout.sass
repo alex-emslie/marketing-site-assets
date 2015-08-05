@@ -1,0 +1,37 @@
+@import "mixins"
+
+
+/**** Global ****/
+.sub-callout
+  @include clearfix
+  position: relative
+  h3
+    a
+      color: $black
+      &:hover
+        color: $blue
+  .sub-content
+    width: 80%
+    float: right
+  &.bordered
+    padding-top: 2.44em !important
+&.dark
+  h3
+    a
+      color: $white
+      &:hover
+        color: $blue
+
+
+/**** Home Page ****/
+.choose
+  .sub-callout
+    @include sub-callout($icon: true)
+
+.growth
+  .sub-callout
+    @include sub-callout($icon: true)
+
+.monetization
+  .sub-callout
+    @include sub-callout($icon: true)

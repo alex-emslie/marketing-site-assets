@@ -1,0 +1,258 @@
+%headings-1
+  font-size: 1.7em
+  @include media(min-width $tablet)
+    font-size: em($heading_1 * .9)
+  // @include media(max-width 1100px)
+  //   font-size: em($heading_1 * .65)
+.video-carousel
+  position: relative
+  height: auto
+  @include clearfix
+  @include media(min-width $video-break)
+    background-color: #000
+    height: 680px
+  .container
+    padding: 0 !important
+    overflow: hidden
+  .video-container
+    @include clearfix
+    width: 100%
+    height: auto
+    overflow: hidden
+    @include media(min-width $video-break)
+      height: 680px
+    .video-placeholder
+      background-color: #3c3d3e
+      @include span-columns(5)
+      position: relative
+      float: left
+      height: 100%
+      display: block
+      @include transition(opacity 0.2s ease-in)
+      svg
+        position: absolute
+        top: 40.5%
+        left: 45%
+        width: 70px
+        height: 70px
+        fill: #00ffff
+        cursor: pointer
+        @include transition(0.15s fill ease-in)
+        &:hover
+          fill: $white
+      .item
+        img
+          position: relative
+          top: -1px
+          svg
+            cursor: pointer
+        .video-launch
+          position: relative
+          display: block
+      @include media(max-width $video-break)
+        display: none !important
+
+    .video
+      position: absolute
+      left: 0
+      height: 100%
+      width: 100%
+      .iframe-container
+        position: relative
+        padding-bottom: 56.25%
+        height: 0
+        iframe
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100vh
+      .iframe-placeholder
+        width: 100%
+        opacity: 1
+        @include transition(opacity 0.4s ease-in-out)
+      .close
+        position: absolute
+        z-index: 100
+        fill: white
+        top: 20px
+        right: 20px
+        cursor: pointer
+        &:hover
+          opacity: 0.7
+        svg
+          width: 40px
+          height: 40px
+    .info
+      @include background-theme("light", true, -34.5deg, 52.5%)
+      position: relative
+      z-index: 1000
+      padding: 30px
+      @include clearfix()
+      @include span-columns(12)
+      @include media(min-width $tablet)
+        min-height: 750px
+      @include media(min-width $video-break)
+        @include span-columns(7)
+      .slide
+        text-align: center
+        @include media(min-width $video-break)
+          text-align: left
+        &:first-child
+          .content
+            display: block
+      .display
+        overflow: auto
+        padding-bottom: 20px
+        @include media(min-width $tablet)
+          min-height: 390px
+      .content
+        @include span-columns(10)
+        @include shift(1)
+        padding: 13% 0 0
+        display: none
+        @include media(min-width $video-break)
+          padding: 8.33% 0
+      .pagination
+        margin-top: em(40)
+        img
+          width: 12.5%
+          margin-right: 2%
+          border-radius: 45px
+          background-size: cover
+          display: inline
+          &:last-child
+            margin-right: 0
+      .pagination-container
+        width: 120%
+        position: relative
+        bottom: 0
+        left: -30px
+        @include media(min-width $mobile)
+          width: 100%
+          left: 0
+        @include media(min-width $video-break)
+          overflow-y: inherit
+          overflow-x: inherit
+          position: absolute
+          top: 70%
+          margin-top: 0
+        .video-pagination
+          position: relative
+          width: 100%
+          margin-left: -40px
+          margin: 0 auto
+          height: 98px
+          -webkit-overflow-scrolling: touch
+          overflow-x: scroll
+          overflow-y: hidden
+          white-space: nowrap
+          @include transition(opacity 1.0s ease-in)
+          @include media(min-width $mobile)
+            left: 0
+            overflow-x: auto
+            overflow-y: hidden
+            width: 562px
+          @include media(min-width $video-break)
+            position: relative
+            margin-left: 50px
+            width: 100%
+          li
+            height: 70px
+            width: 70px
+            background-size: 70px
+            z-index: 5
+            list-style: none
+            display: inline-block
+            margin-right: 20px
+            cursor: pointer
+            &:first-child
+              display: inline-block
+              margin-left: 10px
+              .active-on
+                margin-left: -10px
+                margin-top: 6px
+            &:last-child
+              margin-right: 0
+            &:last-child
+              padding-right: 0
+            @include media(max-width 1100px)
+              height: 60px
+              width: 60px
+              background-size: 60px
+          .custom-slide
+            img
+              height: 70px
+              width: 70px
+              background-size: 70px
+              z-index: 1000
+              position: relative
+              cursor: pointer
+              margin-top: 20px
+              border-radius: 70px
+              &:hover
+                opacity: 0.7
+          .active-on
+            position: absolute
+            z-index: 1000
+            margin-left: -10px
+            margin-top: 6px
+            opacity: 0
+            @include transition(opacity 0.25s ease-in)
+            svg
+              height: 90px
+              width: 90px
+            &.on
+              opacity: 1
+          &.stacked
+            position: relative
+            width: 70px
+            top: 8%
+            margin: 0 auto
+            left: 0
+
+
+    button.video-launch
+      text-align: center
+      display: none
+      @include media(min-width $video-break)
+        display: none
+    .controls
+      @include transition(opacity 0.4s ease-in)
+      display: none
+      background-color: $off-white
+      width: 10%
+      height: 100vh
+      position: absolute
+      left: 0
+      margin-top: 30px
+      @include media(min-width $video-break)
+        display: none
+      span
+        color: white
+        font-weight: bold
+        cursor: pointer
+        svg
+          max-height: 20px
+          max-width: 20px
+          width: 100%
+          fill: #A4A4A4
+          top: 20px
+          position: relative
+          cursor: pointer
+
+.video-modal
+  &.in
+    .video
+      z-index: 100000
+    .video-pagination
+      z-index: 100000
+    .controls
+      z-index: 100000
+  .modal-content
+    margin-top: 0
+  .modal-dialog
+    margin: 0
+  .modal.fade:not(.in) .modal-dialog
+    -webkit-transform: translate3d(-25%, 0, 0)
+    transform: translate3d(-25%, 0, 0)

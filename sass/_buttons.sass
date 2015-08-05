@@ -1,0 +1,16 @@
+@import "buttons/mixins"
+@import "buttons/extends"
+
+button, .button
+  @extend %button
+  &.light
+    @extend %button-light
+
+.text-button
+  @extend %text-button
+
+.text-link
+  @extend %text-link
+
+.utility-button
+  @extend %utility-button

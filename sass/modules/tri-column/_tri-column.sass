@@ -1,0 +1,71 @@
+@import "mixins"
+
+.tri-column
+  @include background-theme("dark", true)
+  @include clearfix()
+  .container
+    padding-top: 0
+    padding-bottom: 0
+    @include media(min-width $tablet)
+      padding-top: 78px
+      padding-bottom: 78px
+  .column
+    @include span-columns(4)
+    padding-top: 0
+    padding-bottom: 0
+    padding-top: 38px
+    padding-bottom: 38px
+    @include media(min-width $tablet)
+      padding-top: 0
+      padding-bottom: 0
+    .content
+      width: 55%
+      margin: 0 auto
+      h2
+        a
+          color: inherit
+          text-style: inherit
+          &:hover
+            color: $blue
+      .icon
+        img
+          display: none
+          max-width: 120px
+          height: auto
+          width: 100%
+          position: relative
+          margin-bottom: 40px
+          @include media(min-width $tablet)
+            display: block
+    @include media(max-width $tablet)
+      @include span-columns(12)
+      .content
+        width: 100%
+        padding: 0 150px
+      .container
+        padding: em(42)
+    @include media(max-width $mobile)
+      .content
+        padding: 0 $mobile-padding
+  &.bordered
+    .column
+      border-bottom: 1px solid #303334
+      &:last-child
+        border-bottom: 1px solid transparent
+      p
+        display: none
+    @include media(min-width $tablet)
+      .column
+        border-bottom: 1px solid transparent
+        &:after
+          display: block
+          position: absolute
+          height: 80%
+          content: ""
+          border-right: 1px solid #303334
+          top: 10%
+        &:first-child
+          &:after
+            border-right: 1px solid transparent
+      p
+        display: block !important

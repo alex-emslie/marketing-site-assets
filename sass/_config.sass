@@ -1,0 +1,83 @@
+///// Typography configuration///////
+
+$font-size: 16
+// em-base, sets bourbon
+$em-base: 16px
+
+$heading-1: 48
+$heading-1-line: 52
+$heading-2: 30
+$heading-2-line: 34
+$heading-3: 16
+$heading-3-line: 22
+$heading-4: 14
+$heading-4-line: 20
+$heading-5: 36
+$heading-5-line: 40
+$heading-6: 14
+$heading-6-line: 20
+
+$small-point-size: 14
+$small-point-line: 22
+
+$smallest-point-size: 12
+
+$sans-stack: #{Arial, sans-serif}
+
+$thin-font: #{"aauxnext-thin", $sans-stack}
+$regular-font: #{"aauxnext-regular", $sans-stack}
+$bold-font: #{"aauxnext-bold", $sans-stack}
+$light-font: #{"aauxnext-light", $sans-stack}
+
+$primary-font-size: $font-size
+$primary-line-height: 24
+$primary-font-family: $light-font
+
+///// COLORS /////
+
+$black: #1f2326
+$gray: #DFE0E0
+$light-gray: #adaeaf
+$green: #64a62e
+$blue: #2f9bc2
+$icon-green: #00ffff
+$white: #fff
+$off-white: #f2f2f2
+$light-blue: tint($blue, 30%)
+$primary-text: $black
+
+$border-radius: 4px
+
+///// LAYOUT /////
+
+$nav-height: em(70)
+
+// NEAT SETTINGS
+// box sizing is off to not mess up where we import some of these modules into the old pages.
+// the code was included in the normalize.sass file so it's exclusive to the new ones
+
+$max-width: 1400px !global
+$border-box-sizing: false !global
+$default-feature: min-width !global
+$grid-columns: 12 !global
+$gutter: em(0) !global
+
+$mobile: 750px
+$tablet: 1024px
+$video-break: 1200px
+$desktop: $max-width
+
+$mobile-padding: 43px
+
+$z-layers: ( "modal": 9000, "navigation": 8000, "default": 1, "below": -1)
+
+@function z($layer)
+  @if not map-has-key($z-layers, $layer)
+    @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted."
+
+  @return map-get($z-layers, $layer)
+
+//$visual-grid: true !global
+$visual-grid-color: #EEE !global
+$visual-grid-opacity: 1 !global
+$visual-grid-index: back !global

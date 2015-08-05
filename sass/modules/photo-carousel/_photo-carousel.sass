@@ -1,0 +1,76 @@
+.photo-carousel
+  @include background-theme("light" , true)
+  .photo-description
+    position: relative
+    @include span-columns(12)
+    padding: 75px $mobile-padding
+    @include media(min-width $mobile)
+      padding: 150px
+    @include media(min-width $tablet)
+      @include span-columns(4)
+      padding: 75px
+    .owl-controls
+      position: absolute
+      top: 20px
+      left: 40px
+      @include media(min-width $mobile)
+        top: 75px
+        left: 145px
+      @include media(min-width $tablet)
+        top: 520px
+        left: 73px
+  h1
+    @include media(max-width 1000px)
+      font-size: 2.5em
+  .arrow
+    position: absolute
+    z-index: 100
+    margin-top: 270px
+    svg
+      @include transition(opacity 0.3s ease-in)
+      max-height: 50px
+      cursor: pointer
+      fill: $black
+      opacity: 0
+      width: 20%
+    &.right
+      right: 4%
+      svg
+        float: right
+    &.left
+      left: 4%
+    @include media(min-width $tablet)
+      svg
+      &.right
+        right: 37%
+#photo-carousel
+  max-height: 900px
+  @include span-columns(8)
+  cursor: pointer
+  .image
+    width: 100%
+    height: 220px
+    @extend %bg-cover
+    @include media(min-width $mobile)
+      height: 400px
+    @include media(min-width $tablet)
+      height: 600px    
+    &.one
+      @include retina-image('/assets_new/imgs/career1', cover, 'jpg' )
+    &.two
+      @include retina-image('/assets_new/imgs/career2', cover, 'jpg' )
+    &.three
+      @include retina-image('/assets_new/imgs/career3', cover, 'jpg' )
+  img
+    display: block
+    height: auto
+    width: 100%
+    max-height: 900px
+  @include media(max-width $tablet)
+    @include span-columns(12)
+  .owl-controls
+    @include media(max-width $tablet)
+      position: relative
+      margin-top: 4%
+      padding-left: 10%
+      right: 0

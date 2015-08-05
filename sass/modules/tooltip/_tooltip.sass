@@ -1,0 +1,123 @@
+// @import "extends"
+.tooltip
+  svg
+    cursor: pointer
+
+.tooltip
+  position: absolute
+  z-index: 800
+  display: block
+  font-style: normal
+  font-weight: normal
+  letter-spacing: normal
+  line-break: auto
+  line-height: 1.42857143
+  text-align: left
+  text-align: start
+  text-decoration: none
+  text-shadow: none
+  text-transform: none
+  white-space: normal
+  word-break: normal
+  word-spacing: normal
+  word-wrap: normal
+  font-size: 12px
+  opacity: 0
+  filter: alpha(opacity = 0)
+  border-radius: 5px
+  background: $off-white
+  color: $black
+  &.blue
+    color: $off-white
+    background: #133a4e
+
+.tooltip.in
+  opacity: 1
+  filter: alpha(opacity = 90)
+
+.tooltip.top
+  margin-top: -15px
+  padding: 5px 0
+
+.tooltip.right
+  margin-left: 3px
+  padding: 0 5px
+
+.tooltip.bottom
+  margin-top: 3px
+  padding: 5px 0
+
+.tooltip.left
+  margin-left: -3px
+  padding: 0 5px
+
+.tooltip-inner
+  font-family: $light-font
+  font-size: 16px
+  line-height: 24px
+  padding: 16px 20px 20px
+  overflow: hidden
+  width: 250px
+
+.tooltip-arrow
+  position: absolute
+  width: 0
+  height: 0
+  border-color: transparent
+  border-style: solid
+
+.tooltip.top .tooltip-arrow
+  bottom: -8px
+  left: 50%
+  margin-left: -8px
+  border-width: 8px 8px 0
+  border-top-color: $off-white
+
+.tooltip.top-left .tooltip-arrow
+  bottom: 0
+  right: 5px
+  margin-bottom: -5px
+  border-width: 8px 8px 0
+  border-top-color: $off-white
+
+.tooltip.top-right .tooltip-arrow
+  bottom: 0
+  left: 5px
+  margin-bottom: -5px
+  border-width: 8px 8px 0
+  border-top-color: $off-white
+
+.tooltip.right .tooltip-arrow
+  top: 50%
+  left: 0
+  margin-top: -5px
+  border-width: 8px 5px 5px 0
+  border-right-color: $off-white
+
+.tooltip.left .tooltip-arrow
+  top: 50%
+  right: 0
+  margin-top: -5px
+  border-width: 5px 0 5px 5px
+  border-left-color: $off-white
+
+.tooltip.bottom .tooltip-arrow
+  top: 0
+  left: 50%
+  margin-left: -5px
+  border-width: 0 5px 5px
+  border-bottom-color: $off-white
+
+.tooltip.bottom-left .tooltip-arrow
+  top: 0
+  right: 5px
+  margin-top: -5px
+  border-width: 0 5px 5px
+  border-bottom-color: $off-white
+
+.tooltip.bottom-right .tooltip-arrow
+  top: 0
+  left: 5px
+  margin-top: -5px
+  border-width: 0 5px 5px
+  border-bottom-color: $off-white

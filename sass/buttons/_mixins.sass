@@ -1,0 +1,18 @@
+@mixin button($light: false)
+  background: transparent
+  border: 1px solid $black
+  outline: none
+  margin-top: em(25)
+  @include transition(background 0.3s ease)
+  @if $light
+    color: $white
+    border-color: $white
+  @else
+    color: $black
+    border-color: $black
+  &:hover
+    background: $black
+    border-color: $black
+  &:active
+    background: $blue
+    border-color: $blue

@@ -1,0 +1,21 @@
+@mixin icon-grid($color: "dark", $columns: 6, $icon-height: auto, $icon-columns: 4, $icon-margin: 2)
+  @include span-columns($columns)
+  @include shift(0)
+  .row
+    @include row()
+    margin-bottom: 20px
+    &:last-child
+      margin-bottom: 0
+    .icon
+      height: $icon-height
+      float: left
+      display: block
+      width: percentage(((100 / $icon-columns) - $icon-margin) / 100 )
+      margin-right: percentage(($icon-margin + ($icon-margin / ($icon-columns - 1))) / 100)
+      @if $color == "dark"
+        background-color: #3c3d3e
+      @if $color == "light"
+        background-color: #dfe0e0
+      border-radius: 7px
+      &:last-child
+        margin-right: 0

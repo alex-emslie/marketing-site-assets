@@ -1,0 +1,37 @@
+@import "iconography/mixins"
+@import "iconography/extends"
+
+.svgstore
+  width: 0
+  height: 0
+  visibility: hidden
+
+.ring
+  -webkit-transform: .2s ease
+  -webkit-transform-origin: 50% 46.5%
+
+// PNG fallbacks for when SVG retrieval fails or the browser doesn't support SVGs
+.no-svgs
+  .logo a
+    background: url(http://info.appdirect.com/assets_new/imgs/appdirect_logo_header.png) no-repeat
+    background-size: 115px 32px
+    background-position: 0 20px
+    opacity: 1
+    @include transition(opacity .2s ease)
+    &:hover
+      opacity: .7
+  .ad-logo a
+    display: block
+    width: 102px
+    height: 44px
+    background-image: url(http://info.appdirect.com/assets_new/imgs/appdirect_logo_footer.png)
+    background-size: 102px 28px
+    background-position: 0px 7px
+    background-repeat: no-repeat
+    opacity: 1
+    @include transition(opacity .2s ease)
+    &:hover
+      opacity: .7
+  .active-on.on img
+    border-radius: 60px
+    border: 2px solid $black 

@@ -1,0 +1,26 @@
+@mixin sub-callout($columns: 12, $border-radius: 7px, $padding:0, $icon: false, $background-theme: "none")
+  @include span-columns($columns)
+  margin-left: -5px
+  @if $background-theme == "light"
+    @include background-theme("light", true)
+
+  @if $background-theme == "dark"
+    @include background-theme("dark", true)
+
+  @if $background-theme == "none"
+    background: none
+
+  @if $icon == true
+    .text
+      margin-left: 55px
+  @else
+    .text
+      margin-right: 0
+
+  border-radius: $border-radius
+  padding-top: $padding
+  padding-bottom: $padding
+  svg
+    top: -3px
+    float: left
+    max-height: 30px

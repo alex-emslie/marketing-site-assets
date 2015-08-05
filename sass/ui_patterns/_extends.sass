@@ -1,0 +1,42 @@
+%border-box
+  border-radius: $border-radius
+  border: 1px solid $gray
+  border-bottom: 1px solid #b0b0b0
+
+%no-style-list
+  margin: 0
+  padding: 0
+  li
+    list-style: none
+    padding: 0
+    margin: 0
+
+%inline-list-elements
+  li
+    float: left
+
+%icon-shape
+  width: em(40)
+  height: em(40)
+
+%bg-cover
+  background-size: cover
+  background-position: 50% 50%
+
+%pagination-dot
+  border: 2px double transparent
+  box-shadow: 0 0 0 2px transparent
+  display: block
+  width: 14px
+  height: 14px
+  margin: 5px 7px
+  border-radius: 20px
+  background: $light-gray
+
+%pagination-dot-hover
+  border: 2px double #fff
+  box-shadow: 0 0 0 2px $black
+
+%pagination-dot-active
+  @extend %pagination-dot-hover
+  background: $black

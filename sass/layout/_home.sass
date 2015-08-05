@@ -1,0 +1,249 @@
+.hero
+  .videoContainer
+    position: absolute
+    overflow: hidden
+    z-index: -1
+    width: 100%
+    min-height: 780px
+    height: 100%
+    @include media(min-width $mobile)
+      height: inherit
+      height: 100vh
+    video
+      display: none
+      @include media(min-width $mobile)
+        opacity: 0
+        display: block
+        position: absolute
+        right: 50%
+        bottom: 50%
+        @include transform(translateX(50%) translateY(50%))
+        z-index: -1
+        min-width: 100%
+        min-height: 100%
+        width: auto
+        height: auto
+        overflow: hidden
+  .js-poster
+    position: absolute
+    z-index: -1
+    bottom: 50%
+    right: 50%
+    @include transform(translateX(50%) translateY(50%))
+    min-width: 100%
+    min-height: 100%
+
+.choose
+  @include background-theme("dark", true)
+  .callout-list
+    margin-top: 0
+    @include media(min-width $tablet)
+      margin-top: 30px
+    .text
+      @include media(max-width 1000px)
+        p
+          font-size: 14px
+  #play_btn, #star_btn, #eye_btn
+    @include transition(fill 0.5s ease)
+    position: relative
+    &:hover
+      height: 2.15em
+      top: -1px
+      .green
+        fill: #fff
+      .white
+        fill: #64a62e
+.growth
+  @include background-theme("light", true, -34.5deg, 52.5%)
+  img
+    @include image-tag(em(644), em(593))
+  .content
+    border-bottom: 1px solid transparent
+    @include media(min-width $tablet)
+      border-bottom: 1px solid $gray
+      padding-bottom: em(44)
+    @include media(max-width 1000px)
+      border-bottom: 1px solid transparent
+  .half-width
+    position: relative
+    bottom: 0
+    right: 0
+    @include media(min-width $tablet)
+      &:last-child
+        min-height: em(400)
+        // #col-1, #col-2, #col-3, #col-4, #col-5, #col-6
+        //   display: none
+        overflow: hidden
+        position: relative
+        margin-top: 35px
+        top: 119px
+        svg
+          margin-right: 70px
+    .sub-callout
+      display: none
+      @include media(min-width $tablet)
+        display: block
+      @include media(max-width 1000px)
+        display: none
+    #graph
+      width: 100%
+      padding: em(25) em(25) 0
+      @include media(min-width $mobile)
+        padding: em(0) em(150) 0 em(150)
+      @include media(min-width $tablet)
+        width: 95%
+        margin-left: 0
+        padding: 0
+        min-height: 400px
+    g[id^="btn"]
+      cursor: pointer
+    svg
+      .step-1-low
+        fill: #A6D7EA
+      .step-1-high
+        fill: #9FCFE1
+      .step-2-low
+        fill: #2F9BC2
+      .step-2-high
+        fill: #2D95BA
+      .step-3-low
+        fill: #145A7D
+      .step-3-high
+        fill: #135078
+      .step-4-low
+        fill: #0F6F67
+      .step-4-high
+        fill: #0E6463
+      .step-5-high
+        fill: #60962C
+      .step-5-low
+        fill: #64A62E
+      .step-6-high
+        fill: #E5A03D
+      .step-6-low
+        fill: #EEAE3F
+      g.active
+        path, polygon
+          fill: #133a4e
+        // .ring
+        //   -webkit-transform: rotate(180deg)
+    path, polygon
+      @include transition(fill .2s ease)
+  .label
+    margin-top: -14px
+    letter-spacing: 1px
+    font-size: 10px
+    @include media(min-width $mobile)
+      font-size: 14px
+
+.monetization
+  background-color: #F5F8F7
+  .container
+    padding-bottom: 0
+    @include media(min-width $tablet)
+      padding: 4.9375em 0 6em
+    p
+      font-size: 14px
+    h2
+      @include media(max-width 1100px)
+        position: absolute
+      @include media(max-width $tablet)
+        position: relative
+    .callout-list
+      ul
+        margin-top: 64px
+        @include media(max-width 1100px)
+          margin-top: 100px
+        @include media(max-width $tablet)
+          margin-top: 64px
+  .half-width
+    width: 100%
+    @include media(min-width $tablet)
+      width: 50%
+    &:last-child
+      min-height: em(240)
+      // #col-1, #col-2, #col-3, #col-4, #col-5, #col-6
+      //   display: none
+      overflow: hidden
+      position: relative
+      width: 100%
+      @include media(min-width $mobile)
+        width: 100%
+      @include media(min-width $tablet)
+        width: 60%
+      @include media(min-width $desktop)
+        overflow: visible
+      img
+        width: 100%
+        position: relative
+        bottom: 0
+        padding: 2.125em 1.125em 0
+        top: 10px
+        @include media(min-width $mobile)
+          margin-top: 40px
+          position: relative
+          top: 10px
+        @include media(min-width $tablet)
+          top: -2px
+          margin-top: 30px
+          width: 100%
+          padding: 3.125em 0 0 3.125em
+      @include media(min-width $tablet)
+        position: absolute
+        right: 0
+        bottom: -8px
+        img
+          width: 100%
+          min-width: 830px
+
+
+.performance
+  @include background-theme("dark")
+  .container
+    padding-bottom: inherit
+    @include media(min-width $mobile)
+      padding-bottom: 0
+  h1
+  .half-width
+    &:last-child
+      position: relative
+    .icon
+      display: none
+      position: absolute
+      bottom: 47.5%
+      left: 19%
+      @include media(min-width $tablet)
+        display: block
+      &.second
+        bottom: 68%
+        left: 44.5%
+      svg
+        width: 30px
+        height: 30px
+        fill: $icon-green
+        @include transition(fill 0.5s ease)
+        position: relative
+        cursor: pointer
+        &:hover
+          height: 2.15em
+          top: 1px
+          .green
+            fill: #fff
+          .white
+            fill: #64a62e
+  .callout-list
+    margin-top: 0
+    @include media(min-width $tablet)
+      margin-top: 10%
+  img
+    right: 0
+    width: 100%
+    padding: em(50) em(25) 0
+    @include media(min-width $mobile)
+      padding: 0
+      padding: em(75) em(150) 0
+    @include media(min-width $tablet)
+      display: block
+      position: relative
+      right: 60px
+      padding: 0

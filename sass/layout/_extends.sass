@@ -1,0 +1,96 @@
+%centered-block
+  margin: 0 auto
+
+%image-replace
+  text-indent: -100%
+  white-space: nowrap
+  overflow: hidden
+
+%callout-list
+  @include shift(0)
+  @include span-columns(12)
+  margin-left: 0
+  padding: 0 $mobile-padding
+  @include media(min-width $mobile)
+    padding: 0 em(150)
+  @include media(min-width $tablet)
+    padding: 0 em(30)
+  ul
+    @extend %no-style-list
+    margin-top: 34px !important
+    @include media(min-width $mobile)
+      margin-top: 64px
+    li
+      margin-bottom: em(35)
+      position: relative
+  ul.bullets
+    margin: 10px 0
+    padding-left: 17px
+    font-size: 14px
+    margin-top: 4px !important
+    li
+      margin-bottom: 0
+      list-style: none
+      color: $black
+      &:before
+        content: ""
+        display: block
+        position: absolute
+        width: 6px
+        height: 6px
+        border-radius: 3px
+        top: 7px
+        left: -15px
+        background-color: #adaeaf
+  a
+    @extend %text-button
+  svg
+    @extend %icon-shape
+    position: relative
+    top: em(-3)
+  &.dark svg
+    fill: $light-gray
+  @include media(min-width $tablet)
+    @include span-columns(8)
+    @include shift(2)
+  .sub-callout:last-child
+    margin-bottom: 0
+
+
+
+%container
+  position: relative
+  @include outer-container()
+  @include padding(em(50) 0 em(28) 0)
+  @include clearfix
+  @include media(min-width $mobile)
+    @include padding(em(79) 0 em(96) 0)
+
+%container-small
+  position: relative
+  @include outer-container(980px)
+  @include clearfix
+
+%container-full
+  padding: 0
+  @include clearfix
+
+%full-width
+  @include span-columns(12)
+
+%half-width
+  @extend %full-width
+  @include media(min-width $tablet)
+    @include span-columns(6)
+
+%third-width
+  @extend %full-width
+  @include media(min-width $tablet)
+    @include span-columns(4)
+
+%quarter-width
+  @extend %full-width
+  @include media(min-width $mobile)
+    @include span-columns(6)
+  @include media(min-width $tablet)
+    @include span-columns(3)

@@ -1,0 +1,39 @@
+@import "layout/extends"
+@import "layout/mixins"
+@import "layout/home"
+
+body
+  &.overflow
+    overflow: hidden
+
+@include hidpi(2)
+  font-size: 200%
+
+.container
+  @extend %container
+
+.container.flex
+  @include display(flex)
+  @include flex-direction(column-reverse)
+  @include flex-wrap(wrap)
+  @include media(min-width $tablet)
+    display: block
+
+.container-small
+  @extend %container-small
+
+.container-full
+  @extend %container-full
+
+.half-width
+  @extend %half-width
+
+.callout-list
+  @extend %callout-list
+
+.half-graphic
+  @extend %half-width
+  &.overlap
+    @include span-columns(12)
+    @include media(min-width $tablet)
+      @include span-columns(7)

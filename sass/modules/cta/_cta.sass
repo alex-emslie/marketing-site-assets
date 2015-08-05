@@ -1,0 +1,44 @@
+.cta
+  @include background-theme("dark", true)
+  @include clearfix()
+  padding: 0 $mobile-padding
+  .container
+    padding: 3.125em 0 2.75em
+    @include media(min-width $mobile)
+      padding: 6.125em 0 6.75em
+  h1
+    margin-bottom: 0
+  overflow: auto
+  @include media(min-width $mobile)
+    padding-left: 150px
+    padding-right: 150px
+  @include media(min-width $tablet)
+    padding-left: 75px
+    padding-right: 75px
+  .row
+    @include span-columns(12)
+    @include shift(0)
+    text-align: center
+    @include media(min-width $mobile)
+      text-align: center
+    &.copy
+      margin-bottom: 0
+      text-align: left
+      @include media(min-width $mobile)
+        margin-bottom: 30px
+        text-align: center
+    a.button
+      position: relative
+      width: 200px
+      display: block
+      margin-bottom: 20px
+      &:last-child
+        margin-bottom: 0
+      @include media(min-width $mobile)
+        width: 200px
+        display: inline
+        &:not(:last-child)
+          margin-right: 15px
+      @include media(min-width $tablet)
+        margin-right: 42px
+        width: 200px

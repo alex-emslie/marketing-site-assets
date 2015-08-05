@@ -1,0 +1,27 @@
+@mixin indented-text($columns, $shift)
+  @include span-columns(12)
+  @include media(min-width $tablet)
+    @include span-columns($columns)
+    @include shift($shift)
+
+@mixin background-theme($color: "dark", $gradient: false, $angle: -34.5deg, $shift: 50%)
+  @if $color == "dark"
+    color: $gray
+
+    @if $gradient
+      @include ad-gradient(#15181a, #1a1d1e, $angle, $shift)
+    @else
+      background-color: #15181a
+
+  @else
+    color: $black
+    @if $gradient
+      @include ad-gradient(#f1f3f3, #f5f7f7, $angle, $shift)
+
+@mixin image-tag($width, $height)
+  height: auto
+  display: block
+  max-width: 100%
+  max-height: 100%
+  width: $width
+  height: $height

@@ -1,0 +1,43 @@
+%button-shared
+  @extend %paragraphs
+  @extend %allcaps
+  padding: 0.65em 0.65em 0.65em
+  letter-spacing: 2px
+  white-space: nowrap
+  display: inline-block
+  font-size: em(14)
+  @include media(min-width $mobile)
+    padding: 1em 1.75em 1em
+
+%button
+  @include button
+  @extend %button-shared
+
+%button-light
+  @include button(true)
+  @extend %button-shared
+
+%text-button
+  // allcaps, smallpoint, interactable-color from typography extends
+  @extend %interactable-color
+  @extend %allcaps
+  @extend %smallestpoint
+  font-family: $bold-font
+  letter-spacing: 2px
+  text-decoration: none
+
+%text-link
+  @extend %interactable-color
+  color: $gray
+  font-family: $primary-font-family
+  text-decoration: none
+
+%utility-button
+  padding: 0 em(75)
+  line-height: em(30)
+  background: $black
+  @extend %interactable-color
+  color: $gray
+  font-family: $primary-font-family
+  text-decoration: none
+  border-radius: 0
