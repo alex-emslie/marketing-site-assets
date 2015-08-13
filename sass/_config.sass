@@ -81,3 +81,8 @@ $z-layers: ( "modal": 9000, "navigation": 8000, "default": 1, "below": -1)
 $visual-grid-color: #EEE !global
 $visual-grid-opacity: 1 !global
 $visual-grid-index: back !global
+
+$image-url-path: #{"/assets_new/imgs/"}
+
+@function image-url($url)
+  @return url(#{$image-url-path}#{$url})
