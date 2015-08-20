@@ -13,18 +13,21 @@
 // PNG fallbacks for when SVG retrieval fails or the browser doesn't support SVGs
 .no-svgs
   .logo a
+    display: block
     background: url(http://info.appdirect.com/assets_new/imgs/appdirect_logo_header.png) no-repeat
     background-size: 115px 32px
     background-position: 0 20px
+    width: 120px
+    height: 55px
     opacity: 1
     @include transition(opacity .2s ease)
     &:hover
       opacity: .7
   .ad-logo a
-    display: block
-    width: 102px
-    height: 44px
     background-image: url(http://info.appdirect.com/assets_new/imgs/appdirect_logo_footer.png)
+    display: block
+    width: 120px
+    height: 44px
     background-size: 102px 28px
     background-position: 0px 7px
     background-repeat: no-repeat
