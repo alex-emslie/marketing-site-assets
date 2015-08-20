@@ -25,13 +25,14 @@
         height: auto
         overflow: hidden
   .js-poster
-    position: absolute
     z-index: -1
-    bottom: 50%
-    right: 50%
-    @include transform(translateX(50%) translateY(50%))
     min-width: 100%
     min-height: 100%
+    .csstransforms &
+      position: absolute
+      bottom: 50%
+      right: 50%
+      @include transform(translateX(50%) translateY(50%))
 
 .choose
   @include background-theme("dark", true)
