@@ -18,8 +18,10 @@
     li
       height: $nav-height
       position: relative
-      &:not(:last-child)
-        margin-right: em(35, 16)
+      margin-right: em(35, 16)
+      &:last-child
+        margin-right: 0
+        
     li.dropdown:hover
       ul.sub-menu
         opacity: 1
