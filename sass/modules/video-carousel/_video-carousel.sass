@@ -91,7 +91,7 @@
       @include clearfix()
       @include span-columns(12)
       @include media(min-width $tablet)
-        min-height: 750px
+        min-height: 680px
       @include media(min-width $video-break)
         @include span-columns(7)
       .slide
@@ -111,8 +111,18 @@
         @include shift(1)
         padding: 13% 0 0
         display: none
+        h1
+          position: relative
+          &:before
+            content: '\201c'
+          &:after
+              content: '\201d'
         @include media(min-width $video-break)
           padding: 8.33% 0
+          h1:before
+            position: absolute
+            top: 0px
+            left: -16px
       .pagination
         margin-top: em(40)
         img
@@ -135,8 +145,9 @@
           overflow-y: inherit
           overflow-x: inherit
           position: absolute
-          top: 70%
+          bottom: 10%
           margin-top: 0
+          padding-left: 30px
         .video-pagination
           position: relative
           width: 100%
@@ -155,7 +166,7 @@
             width: 562px
           @include media(min-width $video-break)
             position: relative
-            margin-left: 50px
+            margin-left: 8.3333%
             width: 100%
           li
             height: 70px
