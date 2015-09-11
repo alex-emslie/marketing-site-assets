@@ -77,6 +77,7 @@ $ ->
   loadWistia = (wistiaEmbed) ->
     $('.video-launch, button.video-launch').click (e) ->
       e.preventDefault()
+      return false if $('html').hasClass('ie8')
       wistiaEmbed = $(this).attr('title')
       loadedIframe = $('.iframe-container').html('<iframe src="//fast.wistia.net/embed/iframe/' + wistiaEmbed + '?videoFoam="true" allowtransparency="true" frameborder="0" scrolling="no" id="wistia_video" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="1920" height="1080"></iframe>')
       $(loadedIframe).appendTo('.iframe-container')

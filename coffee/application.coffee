@@ -1,6 +1,7 @@
 $ ->
   ad = ad || {}
-  $.get "http://info.appdirect.com/assets_new/svg/shapes.svg", (data) ->
+  svgs_url = if window.location.href.indexOf("local") is -1 then "http://info.appdirect.com/assets_new/svg/svgs.svg" else "/assets_new/svg/svgs.svg"
+  $.get svgs_url, (data) ->
     div = document.createElement("div")
     div.className = "svgstore"
     div.innerHTML = new XMLSerializer().serializeToString(data.documentElement)
@@ -20,7 +21,7 @@ $ ->
         $('g#btn-1').tooltip('show')
         $('g#btn-1').attr("class", "step-1 active")
 
-  ad.sr = new scrollReveal(scrollConfig)
+  ad.sr = new scrollReveal(scrollConfig) unless $('html').hasClass('ie8')
 
   unless $('html').is('[class^="ie"]')
     $('#graph g[id^="btn"]').hover(
