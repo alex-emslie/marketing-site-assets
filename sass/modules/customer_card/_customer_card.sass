@@ -1,0 +1,189 @@
+.customer-cards
+	padding-top: 18px
+	background: #DFE0E0
+	&.on-black
+		background: #000
+	&.featured
+		padding-top: 88px
+
+.customer-card
+	@include span-columns(6)
+	position: relative
+	padding: 0 18px 18px 0
+	&.second, &.fourth
+		padding-right: 0
+	.more-btn
+		@extend %allcaps
+		float: right
+		line-height: 60px
+		padding: 0 25px
+		display: none
+		color: #656667
+	footer
+		background: #CBD7DB
+		height: 60px
+		padding: 0 0 0 25px
+	.more-btn
+		color: white
+		font-family: $bold-font
+		&:hover
+			background: $blue
+	.play-screen
+		display: block
+		@extend %absolute-cover
+	.play-btn
+		@include absolute-center(75px, 75px)
+		width: 75px
+		height: 75px
+		fill: #373637
+	.dropup
+		display: none
+	.dropup-menu
+		@extend %no-style-list
+		text-align: center
+		a
+			color: $black
+	.customer-logo
+
+	// STATES
+	&.has-desc
+		.more-btn
+			display: inline-block
+	&.has-video
+		.customer-logo
+			max-width: 180px
+			margin: 25px 0 0 25px
+
+	&.is-featured
+		@extend %third-width
+		padding: 0 0 18px 0
+		@include media(min-width $tablet)
+			padding: 0 18px 18px 0
+			&.third
+				padding-right: 0
+		.customer-card-img
+			position: relative
+			min-height: 258px
+			width: 100%
+			@include ad-gradient(#0B0B0B, #1F2020, 34deg, 50%)
+			img, svg, a
+				z-index: 2
+			img
+				position: relative
+			&:after
+				background-image: radial-gradient( circle at 0% 0%, #1F2020 0%, transparent 100% )
+				content: ""
+				@extend %absolute-cover
+				z-index: 1
+		footer
+			background: $dark-gray
+			color: white
+		.customer-card-meta
+			p
+				color: #ADAEAF
+		.more-btn
+			color: #656667
+		&:hover, &.active
+			footer
+				background: #5C5D5E
+			.more-btn
+				background: #79797A
+				color: $white
+				&:hover
+					color: $light-blue
+			.play-btn
+				fill: $blue
+		&.active
+			.more-btn
+				background: $blue
+				&:hover
+					color: $white
+
+	// MEDIAQ
+	@include media(min-width $tablet)
+		@include span-columns(3)
+		&.second
+			padding-right: 18px
+		&.fourth
+			padding-right: 0
+		.more-btn
+			display: inline-block
+
+.customer-megapane-content
+	display: none
+
+.customer-card-img
+	background: #F5F6F6
+	min-height: 118px
+
+.customer-card-meta
+	width: 50%
+	float: left
+	h6
+		margin-bottom: 0
+		margin-top: 6px
+	p
+		color: $dark-gray
+
+.megapane
+	@include clearfix
+	display: none
+	width: 100%
+	margin-bottom: 18px
+	position: relative
+	clear: both
+	background: $off-white
+	.arrow
+		position: absolute
+		top: -15px
+		@include triangle(30px, $off-white, up)
+	.close-btn
+		display: none
+		position: absolute
+		right: 25px
+		top: 25px
+		svg
+			width: 40px
+			height: 40px
+			fill: $dark-gray
+			&:hover
+				fill: tint($dark-gray, 25%)
+	a
+		color: $black
+		font-family: $regular-font
+		&:hover
+			color: $blue
+	h4
+		color: $blue
+		@extend %allcaps
+	.column
+		padding: 20px
+		&.first
+			display: none
+		.add-resources
+			display: none
+					
+	@include media(min-width $tablet)
+		padding: 60px 0 20px
+		.close-btn
+			display: block
+		
+		.column 
+			@include span-columns(5)
+			@include shift(1)
+			float: left
+			min-height: 20px
+			&.first
+				display: block
+			&.last
+				@include span-columns(4)
+				@include shift(1)
+				margin-right: 0
+			.add-resources
+				display: block
+				margin-top: 30px
+				a
+					display: block
+			
+    	
+		

@@ -1,3 +1,81 @@
+class Megapane
+  constructor: ->
+    @mode = ""
+    @is_open = false
+    @target = ""
+    @trigger = ""
+    @offset = 0
+    @template = $("<div class='megapane' id='megapane'><div class='arrow'></div><a href='#' class='close-btn'><svg><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#shape-video_close'></use></svg></a><div class='content'></div></div>")
+    @bindEvents()
+
+  get_target: ->
+    @target = switch matchMedia('only screen and (min-width: 1024px)').matches 
+      when true then $(@trigger).parents('.row')
+      when false then $(@trigger).parents('.customer-card')
+
+  get_contents: ->
+    $($(@trigger).attr('href')).html()
+
+  toggle_card_active: ->
+    $('.has-desc').removeClass('active')
+    $(@trigger).parents('.customer-card').addClass('active')
+
+  close: (clear_trigger  = true) ->
+    e = $.Event('close.megapane')
+    $(@trigger).trigger(e)
+    $('#megapane').animate({ height: 'toggle' }, 200, ->
+      $('#megapane').remove()
+    )
+    $('.has-desc').removeClass('active')
+    @trigger = "" if clear_trigger
+    @is_open = false
+
+  open: ->
+    e = $.Event('open.megapane')
+    $(@trigger).trigger(e)
+    @get_target()
+    @set_arrow_offset()
+    @target.after(@template.find('.content').html(@get_contents()).end())
+    $('#megapane').animate({height: 'toggle'}, 200) if !@is_open
+    @toggle_card_active()
+    @is_open = true
+  
+  set_arrow_offset: ->
+    @offset = ($(@trigger).offset().left - $(@trigger).parents('.row').offset().left)+ $(@trigger).outerWidth()/2 - 15
+    @template.find('.arrow').css('left', @offset)
+  
+  bindEvents: ->
+    $('.js-megapane-toggle').on 'click', (e) =>
+      e.preventDefault()
+      if e.target == @trigger
+        @close()
+      else
+        @trigger = e.target
+        @open()
+        
+    $('.js-megapane-toggle').on 'open.megapane', (e) ->
+      $('.js-dropup').tooltip('hide')
+
+    $(document).on 'click', '.megapane .close-btn', (e) =>
+      e.preventDefault()
+      @close()
+
+    # $(window).on 'resize', (e) =>
+    #   console.log( @is_open )
+    #   if @is_open
+    #     if matchMedia('only screen and (min-width: 1024px)').matches && @mode != "desktop"
+    #       console.log("desktop")
+    #       @close(false)
+    #       @open()
+    #       @mode = "desktop"
+    #     else if matchMedia('only screen and (max-width: 1024px)').matches && @mode != "mobile"
+    #       console.log("mobile")
+    #       @close(false)
+    #       @open()
+    #       @mode = "mobile"
+
+
+
 $ ->
   ad = ad || {}
   svgs_url = if window.location.href.indexOf("local") is -1 then "http://info.appdirect.com/assets_new/svg/svgs.svg" else "/assets_new/svg/svgs.svg"
@@ -9,9 +87,9 @@ $ ->
     $('body').removeClass('no-svgs').addClass('svgs-loaded')
 
   ad.heroCenter = ->
-    if matchMedia('only screen and (min-width: 750px)').matches
+    if matchMedia('only screen and (min-width: 750px)').matches && $('.hero-copy').length > 0
       $('.hero-copy').css "margin-top" : ($(window).height() - 188 - $('.hero-copy').outerHeight()) / 2
-    if matchMedia('only screen and (max-width: 750px)').matches
+    if matchMedia('only screen and (max-width: 750px)').matches && $('.hero-copy').length > 0
       $('.hero-copy').css "margin-top" : "20px"
   ad.heroCenter()
 
@@ -43,12 +121,9 @@ $ ->
     text = $(this).attr("data-eventname")
     _gaq.push(['_trackEvent', text])
 
-  # $('footer').parallax({imageSrc: '../build/imgs/footer.jpg'})
-  $(window).stellar()
-
   ad.replaceGifs = ->
     if matchMedia('only screen and (min-width: 750px)').matches
-      $('.js-delay-gif').each (index) ->
+      $('img.js-delay-gif').each (index) ->
         $(this).attr('src', $(this).attr('src').replace(/\.jpg|\.png/, ".gif"))
 
   ad.removeVideo = ->
@@ -56,7 +131,7 @@ $ ->
       $('#headerVid').remove()
 
   ad.replaceVideo = ->
-    if $('#headerVid').length == 0
+    if $('#headerVid').length == 0 && $('.videoContainer').length > 0
       $('.videoContainer').append($('<video class="video" id="headerVid" loop="true" muted="true" poster="http://info.appdirect.com/assets_new/imgs/video_placeholder.jpg" autoplay="true" ><!--autobuffer="true"-->
         <source src="https://embed-ssl.wistia.com/deliveries/47d64fae619ed832386cbd85f40504fb23a3141a/file.mp4" type="video/mp4" media="all and (min-width: 600px)">
       </video>'))
@@ -65,17 +140,10 @@ $ ->
   ad.runBreakpoints = ->
     if matchMedia('only screen and (min-width: 750px)').matches
       ad.replaceVideo()
-      ad.videoHeight()
       ad.replaceGifs()
     if matchMedia('only screen and (max-width: 750px)').matches
       ad.removeVideo()
 
-  ad.videoHeight = ->
-    # w_height = $(window).height()
-    # nav_adjustment = 162
-    # #when we drop the padding for mobile, this can be a matchmedia query
-    # v_dimension = w_height - nav_adjustment
-    # $('.videoContainer').height v_dimension
   ad.runBreakpoints()
 
   $(window).resize ->
@@ -85,54 +153,7 @@ $ ->
   $('a.learn-more').click ->
     heroOffset = $('.hero .videoContainer').height() - 70
     $('body').stop().animate { scrollTop: heroOffset }, 650
-
-  $(window).scroll ->
-    height = $(window).scrollTop()
-    if (height > 1000)
-      $('.fixed-footer-bg').css "display" , "block"
-    if (height <= 1000)
-      $('.fixed-footer-bg').css "display" , "none"
-  # $('.shape.hover').hover ->
-  #   console.log ad
-  #   ad['svg_hover_original'] = $(this).find('use').attr('xlink:href')
-  #   if typeof $(ad['svg_hover_original']).find('g').first().attr('fill') != typeof undefined && $(ad['svg_hover_original']).find('g').first().attr('fill') != false
-  #     ad['svg_hover_fillval'] = $(ad['svg_hover_original']).find('g').first().attr('fill')
-  #   $(ad['svg_hover_original']).find('g').first().attr('fill', '')
-  # , ->
-  #   $(ad['svg_hover_original']).find('g').first().attr('fill', ad['svg_hover_fillval'])
-
-
-  # didScroll = null
-  # lastScrollTop = 0
-  # scrollDelta = 5
-  # $nav = $('.main-nav, .mobile-nav')
-  # navbarHeight = $nav.outerHeight()
-  #
-  # $(window).on "scroll", (event) ->
-  #   didScroll = true
-  #
-  # setInterval ->
-  #   if didScroll
-  #     hasScrolled()
-  #     didScroll = false
-  # , 250
-  #
-  # hasScrolled = ->
-  #   # https://medium.com/@mariusc23/hide-header-on-scroll-down-show-on-scroll-up-67bbaae9a78c
-  #   top = $(this).scrollTop()
-  #   return false if Math.abs(lastScrollTop - top) <= scrollDelta
-  #   if top > navbarHeight
-  #     $nav.addClass('detached') if !$nav.hasClass('detached')
-  #   if top <= 0
-  #     $nav.removeClass('detached')
-  #   if top > lastScrollTop && top > navbarHeight
-  #     $nav.removeClass('nav-down').addClass('nav-up')
-  #   else
-  #     if top + $(window).height() < $(document).height()
-  #       $nav.removeClass('nav-up').addClass('nav-down')
-  #   lastScrollTop = top
-
-
+  
   $('.menu-burger, .menu-items').on 'click', ->
     $('.menu-bg, .menu-items, .menu-burger, .mobile-nav .logo').toggleClass 'fs'
     $('body').toggleClass('overflow')
@@ -140,46 +161,33 @@ $ ->
 
   $('.tooltip-active').tooltip()
 
+  ad.megapane = new Megapane
 
+  # dropup menus (customers page)
+  $('.js-dropup').tooltip({
+    html: true
+    title: ->
+      $(this).siblings('.dropup').html()
+    trigger: 'manual'
+    template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner auto"></div></div>'
+  }).on 'click', (e) ->
+      e.preventDefault()
+      $(this).parents('.customer-card').addClass('active')
+      ad.megapane.close() if ad.megapane.is_open
+      $(this).tooltip('toggle')
+  .on 'hide.bs.tooltip', (e) ->
+    $(this).parents('.customer-card').removeClass('active')
 
+  # tooltips in homepage graph
   $('g[id^="btn"]').hover(
    ->
-     #target = $(this).attr('class').replace("step", "btn")
      $('g#btn-1').attr("class", "step-1") if $('g#btn-1').attr("class", "step-1 active")
      $('g[id^="btn"]').tooltip('hide')
      $(this).tooltip('show')
    , ->
-     #target = $(this).attr('class').replace("step", "btn")
      $(this).tooltip('hide')
-  )
-
-  $("#btn-1").tooltip
-    html: true,
-    container: 'body',
+  ).tooltip({
+    html: true
+    container: 'body'
     template: '<div class="tooltip blue active" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
-
-  $("#btn-2").tooltip
-    html: true,
-    container: 'body',
-    template: '<div class="tooltip blue" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
-    # content: $("<h4>Automate sales</h4><p>Enable your sales organization to sell directly to customers. When you’re ready to build a sales team, AppDirect enables them with the tools to bill on behalf of customers.</p>")
-
-  $("#btn-3").tooltip
-    html: true,
-    container: 'body',
-    template: '<div class="tooltip blue" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
-
-  $("#btn-4").tooltip
-    html: true,
-    container: 'body',
-    template: '<div class="tooltip blue" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
-
-  $("#btn-5").tooltip
-    html: true,
-    container: 'body',
-    template: '<div class="tooltip blue" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
-
-  $("#btn-6").tooltip
-    html: true,
-    container: 'body',
-    template: '<div class="tooltip blue" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
+  })
