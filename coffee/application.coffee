@@ -173,6 +173,7 @@ $ ->
   }).on 'click', (e) ->
       e.preventDefault()
       $(this).parents('.customer-card').addClass('active')
+      $('.js-dropup').tooltip('hide')
       ad.megapane.close() if ad.megapane.is_open
       $(this).tooltip('toggle')
   .on 'hide.bs.tooltip', (e) ->
