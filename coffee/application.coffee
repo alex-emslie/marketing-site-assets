@@ -88,7 +88,7 @@ $ ->
 
   ad.heroCenter = ->
     if matchMedia('only screen and (min-width: 750px)').matches && $('.hero-copy').length > 0
-      $('.hero-copy').css "margin-top" : ($(window).height() - 188 - $('.hero-copy').outerHeight()) / 2
+      $('.hero-copy').css "margin-top" : ($('.hero').height() - $('.hero-copy').height() - 65) / 2
     if matchMedia('only screen and (max-width: 750px)').matches && $('.hero-copy').length > 0
       $('.hero-copy').css "margin-top" : "20px"
   ad.heroCenter()
