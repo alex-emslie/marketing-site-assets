@@ -105,45 +105,45 @@
   overflow: scroll
 
 .video-modal
-&.in
+  .modal-content
+    margin-top: 0
+  .modal-dialog
+    margin: 0
   .video
-    z-index: 100000
-  .video-pagination
-    z-index: 100000
-  .controls
-    z-index: 100000
-.modal-content
-  margin-top: 0
-.modal-dialog
-  margin: 0
-.video
-  position: absolute
-  left: 0
-  height: 100%
-  width: 100%
-  .iframe-container
-    position: relative
-    padding-bottom: 56.25%
-    height: 0
-    iframe
-      position: absolute
-      top: 0
-      left: 0
-      width: 100%
-      height: 100vh
-  .iframe-placeholder
-    width: 100%
-    opacity: 1
-    @include transition(opacity 0.4s ease-in-out)
-  .close
     position: absolute
-    z-index: 100
-    fill: white
-    top: 20px
-    right: 20px
-    cursor: pointer
-    &:hover
-      opacity: 0.7
-    svg
-      width: 40px
-      height: 40px
+    left: 0
+    height: 100%
+    width: 100%
+    .iframe-container
+      position: relative
+      padding-bottom: 56.25%
+      height: 0
+      iframe
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100vh
+    .iframe-placeholder
+      width: 100%
+      opacity: 1
+      @include transition(opacity 0.4s ease-in-out)
+    .close
+      position: absolute
+      z-index: 100
+      fill: white
+      top: 20px
+      right: 20px
+      cursor: pointer
+      &:hover
+        opacity: 0.7
+      svg
+        width: 40px
+        height: 40px
+  &.in
+    .video
+      z-index: 100000
+    .video-pagination
+      z-index: 100000
+    .controls
+      z-index: 100000
