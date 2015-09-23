@@ -4,6 +4,8 @@
 	&.on-black
 		background: #000
 
+$card-footer-height: 80px
+
 .customer-card
 	@include span-columns(6)
 	position: relative
@@ -13,19 +15,18 @@
 	.more-btn
 		@extend %allcaps
 		float: right
-		line-height: 80px
+		line-height: $card-footer-height
 		padding: 0 25px
 		display: none
 		color: #656667
-	footer
-		background: #CBD7DB
-		height: 80px
-		padding: 0 0 0 25px
-	.more-btn
 		color: white
 		font-family: $bold-font
 		&:hover
 			background: $blue
+	footer
+		background: #CBD7DB
+		height: $card-footer-height
+		padding: 0 0 0 25px		
 	.play-screen
 		display: block
 		@extend %absolute-cover
