@@ -3,8 +3,6 @@
 	background: #DFE0E0
 	&.on-black
 		background: #000
-	&.featured
-		padding-top: 88px
 
 .customer-card
 	@include span-columns(6)
@@ -15,13 +13,13 @@
 	.more-btn
 		@extend %allcaps
 		float: right
-		line-height: 60px
+		line-height: 80px
 		padding: 0 25px
 		display: none
 		color: #656667
 	footer
 		background: #CBD7DB
-		height: 60px
+		height: 80px
 		padding: 0 0 0 25px
 	.more-btn
 		color: white
@@ -31,6 +29,7 @@
 	.play-screen
 		display: block
 		@extend %absolute-cover
+		background-size: cover
 	.play-btn
 		@include absolute-center(75px, 75px)
 		width: 75px
@@ -43,16 +42,17 @@
 		text-align: center
 		a
 			color: $black
-	.customer-logo
+	.customer-video-poster
+		@extend %absolute-cover
+		width: 100%
+		height: 100%
+		display: block
+		z-index: 2
 
 	// STATES
 	&.has-desc
 		.more-btn
 			display: inline-block
-	&.has-video
-		.customer-logo
-			max-width: 180px
-			margin: 25px 0 0 25px
 
 	&.is-featured
 		@extend %third-width
@@ -64,12 +64,13 @@
 		.customer-card-img
 			position: relative
 			min-height: 258px
-			width: 100%
 			@include ad-gradient(#0B0B0B, #1F2020, 34deg, 50%)
-			img, svg, a
+			.customer-logo, svg, a
 				z-index: 2
-			img
-				position: relative
+			.customer-logo
+				@include absolute-center(420px, 120px)
+				opacity: .75
+
 			&:after
 				background-image: radial-gradient( circle at 0% 0%, #1F2020 0%, transparent 100% )
 				content: ""
@@ -93,11 +94,31 @@
 					color: $light-blue
 			.play-btn
 				fill: $blue
+			.customer-logo
+				opacity: 1
 		&.active
 			.more-btn
 				background: $blue
 				&:hover
 					color: $white
+	&.has-video
+		.customer-card-img
+			background: #010101
+			position: relative
+			&:after
+				display: none
+			.customer-logo
+				position: absolute
+				top: 25px
+				left: 25px
+				margin: 0
+				width: 165px
+				height: 43px
+		.play-screen
+			background-position: top right
+			background-repeat: no-repeat
+			background-size: auto
+
 
 	// MEDIAQ
 	@include media(min-width $tablet)
@@ -117,13 +138,17 @@
 	min-height: 118px
 
 .customer-card-meta
-	width: 50%
+	width: 56%
 	float: left
 	h6
 		margin-bottom: 0
 		margin-top: 6px
 	p
 		color: $dark-gray
+
+.customer-logo
+	width: 420px
+	height: 120px
 
 .megapane
 	@include clearfix
@@ -162,12 +187,16 @@
 			display: none
 		.add-resources
 			display: none
+	.customer-logo
+		display: none
 					
 	@include media(min-width $tablet)
 		padding: 60px 0 20px
 		.close-btn
 			display: block
-		
+		.customer-logo
+			display: block
+			margin-bottom: 18px
 		.column 
 			@include span-columns(5)
 			@include shift(1)
@@ -179,6 +208,8 @@
 				@include span-columns(4)
 				@include shift(1)
 				margin-right: 0
+			.customer-logo
+				display: block
 			.add-resources
 				display: block
 				margin-top: 30px
