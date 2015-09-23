@@ -1,11 +1,14 @@
 @import "mixins"
 @import "extends"
 
-.hero
+.hero   
+  min-height: calc(100vh - 200px)
+  height: 100%
   @extend %bg-cover
-  @include media(min-width $mobile)
-    min-height: calc(100vh - 200px)
-    height: 100%
+  &.constrained
+    height: 480px
+    min-height: auto
+
   .container
     padding: 43px 0 0
     @include media(min-width $mobile)
