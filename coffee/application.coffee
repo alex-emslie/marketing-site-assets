@@ -169,7 +169,7 @@ $ ->
     title: ->
       $(this).siblings('.dropup').html()
     trigger: 'manual'
-    template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner auto"></div></div>'
+    template: '<div class="tooltip shadow" role="tooltip"><div class="tooltip-inner auto"></div></div>'
   }).on 'click', (e) ->
       e.preventDefault()
       $(this).parents('.customer-card').addClass('active')

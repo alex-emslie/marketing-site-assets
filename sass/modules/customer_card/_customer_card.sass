@@ -4,7 +4,7 @@
 	&.on-black
 		background: #000
 
-$card-footer-height: 80px
+$card-footer-height: 70px
 
 .customer-card
 	@include span-columns(6)
@@ -14,19 +14,25 @@ $card-footer-height: 80px
 		padding-right: 0
 	.more-btn
 		@extend %allcaps
-		float: right
-		line-height: $card-footer-height
-		padding: 0 25px
+		position: absolute
+		right: 18px
+		top: 16px
 		display: none
 		color: #656667
 		color: white
 		font-family: $bold-font
 		&:hover
-			background: $blue
+			svg
+				fill: $blue
 	footer
 		background: #CBD7DB
 		height: $card-footer-height
-		padding: 0 0 0 25px		
+		padding: 0 0 0 18px
+		position: relative
+	.more-icon
+		width: 38px
+		height: 38px
+		fill: $white
 	.play-screen
 		display: block
 		@extend %absolute-cover
@@ -69,8 +75,10 @@ $card-footer-height: 80px
 			.customer-logo, svg, a
 				z-index: 2
 			.customer-logo
-				@include absolute-center(420px, 120px)
+				@include absolute-center(336px, 96px)
 				opacity: .75
+				width: 336px
+				height: 96px
 
 			&:after
 				background-image: radial-gradient( circle at 0% 0%, #1F2020 0%, transparent 100% )
@@ -81,18 +89,22 @@ $card-footer-height: 80px
 			background: $dark-gray
 			color: white
 		.customer-card-meta
+			width: 56%
 			p
 				color: #ADAEAF
 		.more-btn
 			color: #656667
+			padding: 0 25px
+			float: right
+			position: static
+			line-height: $card-footer-height
 		&:hover, &.active
 			footer
 				background: #5C5D5E
 			.more-btn
 				background: #79797A
 				color: $white
-				&:hover
-					color: $light-blue
+
 			.play-btn
 				fill: $blue
 			.customer-logo
@@ -111,14 +123,18 @@ $card-footer-height: 80px
 			.customer-logo
 				position: absolute
 				top: 25px
-				left: 25px
+				left: 0
 				margin: 0
-				width: 165px
-				height: 43px
+				width: 252px
+				height: 72px
 		.play-screen
+			opacity: .8
 			background-position: top right
 			background-repeat: no-repeat
-			background-size: auto
+			background-size: 318px 258px
+	&:hover, &.active
+		&.has-video .play-screen
+			opacity: 1
 
 
 	// MEDIAQ
@@ -135,21 +151,25 @@ $card-footer-height: 80px
 	display: none
 
 .customer-card-img
+	position: relative
 	background: #F5F6F6
 	min-height: 118px
+	padding-top: 23px
 
 .customer-card-meta
-	width: 56%
 	float: left
 	h6
 		margin-bottom: 0
-		margin-top: 6px
+		margin-top: 12px
 	p
 		color: $dark-gray
 
 .customer-logo
-	width: 420px
-	height: 120px
+	@include absolute-center(250px, 72px)
+	display: block
+	width: 250px
+	height: 72px
+	opacity: .5
 
 .megapane
 	@include clearfix
@@ -196,7 +216,11 @@ $card-footer-height: 80px
 		.close-btn
 			display: block
 		.customer-logo
+			position: static
+			width: 252px
+			height: 72px
 			display: block
+			margin: 0
 			margin-bottom: 18px
 		.column 
 			@include span-columns(5)
