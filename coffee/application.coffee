@@ -150,6 +150,11 @@ $ ->
     ad.runBreakpoints()
     ad.heroCenter()
 
+  $('.js-replace-select').chosen(
+    disable_search_threshold: 20
+    width: 'auto'
+  )
+
   $('a.learn-more').click ->
     heroOffset = $('.hero .videoContainer').height() - 70
     $('body').stop().animate { scrollTop: heroOffset }, 650
@@ -192,3 +197,20 @@ $ ->
     container: 'body'
     template: '<div class="tooltip blue active" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
   })
+
+  itemfilter = {}
+  $('.filter-select').on 'change', (e) ->
+    e.preventDefault()
+    $('.no-results').remove()
+    filter = $(this).attr('data-filter')
+    value = $(this).val()
+    if $(this).find(":selected").hasClass('default') then delete itemfilter[filter] else itemfilter[filter] = value
+    #console.log itemfilter
+    $("[data-#{filter}]").show()
+    $.each(itemfilter, (key, value) ->
+      $(".filter-element").not("[data-#{key}~='#{value}']").hide()
+    )
+    if $('.filter-element:visible').length == 0
+      #console.log "nothing to show"
+      $('.filter-group').after($("<h2 class='no-results' style='color: white;'>Sorry, nothing to show here</h2>"))
+        
