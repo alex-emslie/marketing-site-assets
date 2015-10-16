@@ -199,6 +199,32 @@ $ ->
   })
 
   itemfilter = {}
+  filterItems = (itemfilter) ->
+    # filter through .filter-elements
+    $.each(itemfilter, (key, value) ->
+      $(".filter-element").not("[data-#{key}~='#{value}']").hide()
+    )
+    # hide unused sections
+    $('.customer-cards').each ->
+      if $(this).find('.filter-element:visible').length == 0
+        $(this).hide()
+    # preserve grid layout
+    if matchMedia('only screen and (min-width: 750px)').matches
+      $('.is-featured:visible').each (i) ->
+        if ((i+1) % 3 == 0)
+          $(this).css('padding-right', '0')
+        else
+          $(this).css('padding-right', '18px')
+      $('.filter-element:not(.is-featured):visible').each (i) ->
+        if ((i+1) % 4 == 0)
+          $(this).css('padding-right', '0')
+        else
+          $(this).css('padding-right', '18px')
+    # add no results message
+    if $('.filter-element:visible').length == 0
+      #console.log "nothing to show"
+      $('.filter-group').after($("<h1 class='no-results' style='color: white;'>We're sorry, but there are no results for your selections. Please <a href='/customers' class='js-filter-reset'>reset</a> or change your filter settings.</h1>"))
+        
   $('.filter-select').on 'change', (e) ->
     e.preventDefault()
     $('.no-results').remove()
@@ -206,11 +232,13 @@ $ ->
     value = $(this).val()
     if $(this).find(":selected").hasClass('default') then delete itemfilter[filter] else itemfilter[filter] = value
     #console.log itemfilter
-    $("[data-#{filter}]").show()
-    $.each(itemfilter, (key, value) ->
-      $(".filter-element").not("[data-#{key}~='#{value}']").hide()
-    )
-    if $('.filter-element:visible').length == 0
-      #console.log "nothing to show"
-      $('.filter-group').after($("<h2 class='no-results' style='color: white;'>Sorry, nothing to show here</h2>"))
-        
+    $("[data-#{filter}], .customer-cards").show()
+    $('.is-featured:visible').removeAttr("style")
+    filterItems(itemfilter)
+
+  $(document).on 'click', '.js-filter-reset', (e) ->
+    e.preventDefault()
+    itemfilter = {}
+    $('.no-results').remove()
+    $('.filter-element, .customer-cards').show()
+    $('.js-replace-select').find('option.default').prop('selected', true).end().trigger('chosen:updated')
