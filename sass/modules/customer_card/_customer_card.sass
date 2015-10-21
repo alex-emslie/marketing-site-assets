@@ -3,6 +3,15 @@
 	background: #DFE0E0
 	&.on-black
 		background: #000
+.text-inline-filter
+	padding: 20px 0 20px 15px
+	h2
+		color: $white
+		line-height: 1
+		margin: 0
+
+		&.no-results
+			margin: .75em 0
 
 $card-footer-height: 70px
 
@@ -10,7 +19,7 @@ $card-footer-height: 70px
 	@include span-columns(6)
 	position: relative
 	padding: 0 18px 18px 0
-	&.second, &.fourth
+	&:nth-child(2n+2), &:nth-child(4n+4)
 		padding-right: 0
 	.more-btn
 		@extend %allcaps
@@ -66,7 +75,7 @@ $card-footer-height: 70px
 		padding: 0 0 18px 0
 		@include media(min-width $tablet)
 			padding: 0 18px 18px 0
-			&.third
+			&:nth-child(3n+3)
 				padding-right: 0
 		.customer-card-img
 			position: relative
@@ -140,9 +149,9 @@ $card-footer-height: 70px
 	// MEDIAQ
 	@include media(min-width $tablet)
 		@include span-columns(3)
-		&.second
+		&:nth-child(2n+2)
 			padding-right: 18px
-		&.fourth
+		&:nth-child(4n+4)
 			padding-right: 0
 		.more-btn
 			display: inline-block
