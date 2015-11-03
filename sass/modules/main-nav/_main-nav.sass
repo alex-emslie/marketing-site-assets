@@ -10,8 +10,9 @@
   .main-nav, .utility-nav
     @extend %main-nav
     font-family: $regular-font
-    @include media(max-width $tablet)
-      display: none
+    display: none
+    @include media(min-width $tablet)
+      display: block
     .utility-nav
       letter-spacing: 1px
       .login
@@ -26,17 +27,17 @@
             text-transform: none
 
   .mobile-nav
-    display: none
+    display: block
     position: fixed
     height: 63px
     background: $black
     background: rgba($black, 0.9)
     z-index: 1001
+    width: 100%
     @include transition(all 0.15s ease-in-out)
-    @include media(max-width $tablet)
-      display: block
-      height: 63px
-      width: 100%
+    @include media(min-width $tablet)
+      display: none
+
     .logo
       position: absolute
       top: 16px

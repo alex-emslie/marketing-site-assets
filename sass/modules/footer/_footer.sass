@@ -59,14 +59,14 @@ footer
       &:last-child
         border-bottom: 0
       &.footer-link
-        @include media(max-width $tablet)
-          display: none
+        display: none
+        @include media(min-width $tablet)
+          display: block
       &.locations
-        @include media(max-width $tablet)
-          display: none
-      &.contact
-        @include media(max-width $tablet)
-          @include span-columns(12)
+        display: none
+        @include media(min-width $tablet)
+          display: block
+
   .footer-link
     a
       text-decoration: none

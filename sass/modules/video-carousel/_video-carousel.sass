@@ -2,8 +2,6 @@
   font-size: 1.7em
   @include media(min-width $tablet)
     font-size: em($heading_1 * .9)
-  // @include media(max-width 1100px)
-  //   font-size: em($heading_1 * .65)
 .video-carousel
   position: relative
   height: auto
@@ -19,8 +17,10 @@
     width: 100%
     height: auto
     overflow: hidden
+    display: none
     @include media(min-width $video-break)
       height: 680px
+      display: block
     .video-placeholder
       background-color: #3c3d3e
       @include span-columns(5)
@@ -49,8 +49,6 @@
         .video-launch
           position: relative
           display: block
-      @include media(max-width $video-break)
-        display: none !important
 
     .video
       position: absolute
@@ -169,9 +167,9 @@
             margin-left: 8.3333%
             width: 100%
           li
-            height: 70px
-            width: 70px
-            background-size: 70px
+            height: 60px
+            width: 60px
+            background-size: 60px
             z-index: 5
             list-style: none
             display: inline-block
@@ -187,10 +185,10 @@
               margin-right: 0
             &:last-child
               padding-right: 0
-            @include media(max-width 1100px)
-              height: 60px
-              width: 60px
-              background-size: 60px
+            @include media(min-width 1100px)
+              height: 70px
+              width: 70px
+              background-size: 70px
           .custom-slide
             img
               height: 70px
