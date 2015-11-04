@@ -78,7 +78,7 @@ class Megapane
 
 $ ->
   ad = ad || {}
-  svgs_url = if window.location.href.indexOf("local") is -1 then "http://info.appdirect.com/assets_new/svg/svgs.svg" if window.location.href.indexOf("github") then "/assets_new/svg/svgs.svg" else "/assets_new/svg/svgs.svg"
+  svgs_url = if window.location.href.indexOf("local") is -1 then "http://info.appdirect.com/assets_new/svg/svgs.svg" else "/assets_new/svg/svgs.svg"
   $.get svgs_url, (data) ->
     div = document.createElement("div")
     div.className = "svgstore"
