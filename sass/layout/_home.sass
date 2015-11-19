@@ -42,9 +42,10 @@
     @include media(min-width $tablet)
       margin-top: 30px
     .text
-      @include media(max-width 1000px)
+      font-size: 14px
+      @include media(min-width 1000px)
         p
-          font-size: 14px
+          font-size: 16px
   .icon-grid
     .logo_box, .logo_cake, .logo_docusign, .logo_intel, .logo_litmos, .logo_mozy, .logo_msoffice, .logo_mural, .logo_newrelic, .logo_product, .logo_sendgrid, .logo_symantec
       background-image: url(../imgs/sprites/home-logos.png)
@@ -101,8 +102,6 @@
     @include media(min-width $tablet)
       border-bottom: 1px solid $gray
       padding-bottom: em(44)
-    @include media(max-width 1000px)
-      border-bottom: 1px solid transparent
   .half-width
     position: relative
     bottom: 0
@@ -121,9 +120,7 @@
     .sub-callout
       display: none
       @include media(min-width $tablet)
-        display: block
-      @include media(max-width 1000px)
-        display: none
+        display: block  
     #graph
       width: 100%
       padding: em(25) em(25) 0
@@ -184,16 +181,17 @@
     p
       font-size: 14px
     h2
-      @include media(max-width 1100px)
+      position: relative
+      @include media(min-width $tablet)
         position: absolute
-      @include media(max-width $tablet)
+        top: 40px
+      @include media(min-width 1100px)
         position: relative
+        top: inherit
     .callout-list
       ul
-        margin-top: 64px
-        @include media(max-width 1100px)
-          margin-top: 100px
-        @include media(max-width $tablet)
+        margin-top: 100px
+        @include media(min-width 1100px)
           margin-top: 64px
   .half-width
     width: 100%

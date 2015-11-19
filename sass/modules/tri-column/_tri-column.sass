@@ -10,12 +10,13 @@
       padding-top: 78px
       padding-bottom: 78px
   .column
-    @include span-columns(4)
-    padding-top: 0
+    @include span-columns(12)
+    padding-top: 0  
     padding-bottom: 0
     padding-top: 38px
     padding-bottom: 38px
     @include media(min-width $tablet)
+      @include span-columns(4)
       padding-top: 0
       padding-bottom: 0
     .content
@@ -37,16 +38,7 @@
           margin-bottom: 40px
           @include media(min-width $tablet)
             display: block
-    @include media(max-width $tablet)
-      @include span-columns(12)
-      .content
-        width: 100%
-        padding: 0 150px
-      .container
-        padding: em(42)
-    @include media(max-width $mobile)
-      .content
-        padding: 0 $mobile-padding
+
   &.bordered
     .column
       border-bottom: 1px solid #303334

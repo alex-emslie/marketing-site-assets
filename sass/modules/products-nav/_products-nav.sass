@@ -12,33 +12,30 @@
     display: block
     color: $black
     background: $white
-    padding: em(51) 2em 0 2.75em
+    padding: 5.4375em 2em 6em 2em
     height: em(162)
     line-height: 1.33333333
     border: 1px solid $light-gray
     border-top: 0
     position: relative
+    svg
+      position: absolute
+      top: 35px
     @include transition(background 0.3s ease)
     @include media(min-width 1100px)
-      
       height: em(178)
       padding: em(63) 2em 0 2.75em
+      svg
+        @extend %icon-shape
+        float: left
+        margin-right: em(20)
+        margin-bottom: em(50)
+        position: relative
+        top: 0
+    @include media(min-width $mobile)
+      border-left: 0
     &:hover
       background: $black
       color: $white
       svg
         fill: $white
-    @include media(min-width $mobile)
-      border-left: 0
-    @include media(max-width 850px)
-      padding: 5.4375em 2em 6em 2em
-    @include media(max-width 1200px)
-      padding: 5.4375em 1.3em 0 2em
-      svg
-        position: absolute
-        top: 35px
-    svg
-      @extend %icon-shape
-      float: left
-      margin-right: em(20)
-      margin-bottom: em(50)
