@@ -1,0 +1,25 @@
+.services
+  .container
+    padding: 4.9375em 30px 6em
+  .cta
+    background-color: $gray
+    background-image: none
+    color: $black
+    &.dark
+      @include background-theme("dark", true)
+  .products-nav
+    background-color: $white
+    text-align: center
+    ul
+      margin: 0
+      padding: 0
+      li
+        border-right: 1px solid $gray
+        height: 200px
+        padding: 35px
+        &:last-child
+          border-right: 0
+    &.first-child
+      border-bottom: 1px solid $gray
+  img
+    width: 100%

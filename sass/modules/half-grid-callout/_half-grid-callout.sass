@@ -1,0 +1,19 @@
+.half-grid-callout
+  @include clearfix()
+  .left
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(6)
+  .right
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(6)
+    text-align: center
+  .content
+    text-align: left
+  &.black
+    background-color: $black
+    color: $white
+  &.white
+    background-color: $white
+    color: $black

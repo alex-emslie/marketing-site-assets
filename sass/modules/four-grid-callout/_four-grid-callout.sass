@@ -1,0 +1,38 @@
+.four-grid-callout
+  @include clearfix()
+  .left
+    background-color: $white
+    height: 500px
+    @include clearfix()
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(5)
+    .row
+      @include clearfix()
+      .box
+        @include span-columns(6)
+        position: relative
+        text-align: center
+        padding: 50px 30px
+        height: 250px
+        .icon
+          width: 82px
+          height: 68px
+        .vertical-align
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+  .right
+    background-color: $gray
+    padding: 50px 8.33%
+    height: 500px
+    position: relative
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(7)
+    .content
+      max-width: 700px
+      position: absolute
+      left: 8.33%
+      right: 8.33%

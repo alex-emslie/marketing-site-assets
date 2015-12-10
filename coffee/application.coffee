@@ -9,7 +9,7 @@ class Megapane
     @bindEvents()
 
   get_target: ->
-    @target = switch matchMedia('only screen and (min-width: 1024px)').matches 
+    @target = switch matchMedia('only screen and (min-width: 1024px)').matches
       when true then $(@trigger).parents('.row')
       when false then $(@trigger).parents('.customer-card')
 
@@ -39,11 +39,11 @@ class Megapane
     $('#megapane').animate({height: 'toggle'}, 200) if !@is_open
     @toggle_card_active()
     @is_open = true
-  
+
   set_arrow_offset: ->
     @offset = ($(@trigger).offset().left - $(@trigger).parents('.row').offset().left)+ $(@trigger).outerWidth()/2 - 15
     @template.find('.arrow').css('left', @offset)
-  
+
   bindEvents: ->
     $('.js-megapane-toggle').on 'click', (e) =>
       e.preventDefault()
@@ -52,7 +52,7 @@ class Megapane
       else
         @trigger = e.target
         @open()
-        
+
     $('.js-megapane-toggle').on 'open.megapane', (e) ->
       $('.js-dropup').tooltip('hide')
 
@@ -163,7 +163,7 @@ $ ->
   $('a.learn-more').click ->
     heroOffset = $('.hero .videoContainer').height() - 70
     $('body').stop().animate { scrollTop: heroOffset }, 650
-  
+
   $('.menu-burger, .menu-items').on 'click', ->
     $('.menu-bg, .menu-items, .menu-burger, .mobile-nav .logo').toggleClass 'fs'
     $('body').toggleClass('overflow')
@@ -229,7 +229,7 @@ $ ->
     if $('.filter-element:visible').length == 0
       #console.log "nothing to show"
       $('.filter-group').after($("<h1 class='no-results' style='color: white;'>We're sorry, but there are no results for your selections. Please <a href='/customers' class='js-filter-reset'>reset</a> or change your filter settings.</h1>"))
-        
+
   $('.filter-select').on 'change', (e) ->
     e.preventDefault()
     $('.no-results').remove()
