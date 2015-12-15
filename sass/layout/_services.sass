@@ -1,6 +1,35 @@
+@keyframes dash
+  from
+    stroke-dashoffset: 1000
+  to
+    stroke-dashoffset: 0
+
 .services
+  h1
+    font-size: 2.7em
   .container
-    padding: 4.9375em 30px 6em
+    padding: 4.9375em 50px 6em
+  .sub-nav
+    width: 100%
+    background-color: $white
+    height: 70px
+    display: none
+    @include media(min-width $tablet)
+      margin-top: 70px
+      display: block
+    a
+      color: $light-gray
+      line-height: 70px
+      padding-right: 40px
+      &.active
+        font-weight: bold
+        color: $black
+  .hero.constrained
+    background-image: url('../imgs/services/services-hero.jpg')
+    height: 700px
+    background-position: bottom center
+    .hero-copy
+      margin-top: 75px !important
   .cta
     background-color: $gray
     background-image: none
@@ -16,10 +45,97 @@
       li
         border-right: 1px solid $gray
         height: 200px
-        padding: 35px
-        &:last-child
-          border-right: 0
+        padding: 50px
+        @include span-columns(12)
+        @include media(min-width $tablet)
+          @include span-columns(3)
+          &:last-child
+            border-right: 0
+        &:nth-child(-n+2)
+          border-bottom: 1px solid $gray
+        @include media(min-width $tablet)
+          &:nth-child(-n+2)
+            border-bottom: 1px solid transparent
+        @include media(min-width $mobile)
+          @include span-columns(6)
     &.first-child
       border-bottom: 1px solid $gray
   img
     width: 100%
+  #trigger1
+    .right
+      padding: 30px
+      @include span-columns(12)
+      @include media(min-width $tablet)
+        @include span-columns(6)
+    .left
+      @include span-columns(12)
+      @include media(min-width $tablet)
+        @include span-columns(6)
+  #GREEN_CIRCLE
+    stroke: transparent
+    &.zap
+      stroke: #8DC63F
+      stroke-dasharray: 1000
+      stroke-dashoffset: 1000
+      animation: dash 1s linear forwards
+  #BLUE_CIRCLE
+    stroke: transparent
+    &.zap
+      stroke: #2F9BC2
+      stroke-dasharray: 1000
+      stroke-dashoffset: 1000
+      animation: dash 1s linear forwards
+  .half-grid-callout
+    &.services-callout
+      .left
+        @include clearfix()
+        height: 100%
+        position: relative
+        padding-top: 50px
+        .content
+          position: relative
+          padding: 0 50px 50px
+          ul
+            margin: 0 0 20px
+          @include media(min-width $tablet)
+            max-width: 700px
+            position: absolute
+            right: 0
+      .right
+        background-image: url('../imgs/services/services-callout.jpg')
+        background-size: cover
+        background-position: 50% 50%
+        height: 500px
+    &.clouds
+      background-color: #ebfcff
+      .left
+        min-height: inherit
+        @include media(min-width $tablet)
+          min-height: 500px
+      .right
+        padding: 50px
+        z-index: 1000
+        position: relative
+        @include media(min-width $tablet)
+          padding: 80px 60px 0 15px
+      .background-image
+        position: relative
+        width: 100%
+        display: none
+        @include media(min-width $mobile)
+          display: block
+        @include media(min-width $tablet)
+          position: absolute
+          left: 0
+          bottom: -6px
+          right: 0
+          overflow: hidden
+          width: 100%
+  .device-parade
+    position: relative
+    top: 50px
+    @include media(min-width $mobile)
+      top: 75px
+    @include media(min-width $tablet)
+      top: 100px

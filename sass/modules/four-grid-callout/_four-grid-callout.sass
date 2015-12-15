@@ -2,37 +2,63 @@
   @include clearfix()
   .left
     background-color: $white
-    height: 500px
+    height: 100%
     @include clearfix()
     @include span-columns(12)
     @include media(min-width $mobile)
       @include span-columns(5)
+      height: 100%
     .row
       @include clearfix()
+      border-bottom: 1px inset $gray
+      &:last-child
+        border-bottom: 0
       .box
         @include span-columns(6)
         position: relative
         text-align: center
         padding: 50px 30px
         height: 250px
-        .icon
-          width: 82px
-          height: 68px
+        cursor: pointer
+        border-right: 1px inset $gray
+        &:last-child
+          border-right: 0
         .vertical-align
           position: absolute
           top: 50%
           left: 50%
           transform: translate(-50%, -50%)
+        &:hover
+          background-color: $dark-gray
+          color: $white
+          border: 1px inset $dark-gray
+          svg
+            .hover
+              display: block
+            .static
+              display: none
+
   .right
     background-color: $gray
-    padding: 50px 8.33%
-    height: 500px
+    padding: 50px
+    height: 100%
     position: relative
     @include span-columns(12)
     @include media(min-width $mobile)
       @include span-columns(7)
+      height: 501px
     .content
       max-width: 700px
-      position: absolute
-      left: 8.33%
-      right: 8.33%
+      position: relative
+      @include media(min-width $mobile)
+        position: absolute
+        left: 8.33%
+        right: 8.33%
+    ul
+      h3
+        margin-left: -19px
+  svg
+    height: 100px
+    width: 100px
+    .hover
+      display: none

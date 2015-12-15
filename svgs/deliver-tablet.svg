@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="devices" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 182 246" style="enable-background:new 0 0 182 246;" xml:space="preserve">
+<g id="TABLET_2_">
+	<rect style="fill:#DFE0E0;" width="182" height="246"/>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="51.6352" y1="-8.846" x2="189.3382" y2="-387.1819" gradientTransform="matrix(1 0 0 1 0 240)">
+		<stop  offset="0" style="stop-color:#319CBF"/>
+		<stop  offset="1" style="stop-color:#8DC63F"/>
+	</linearGradient>
+	<rect x="10" y="30" style="fill:url(#SVGID_1_);" width="162" height="186"/>
+	<polygon style="opacity:0.3;fill:#FFFFFF;enable-background:new    ;" points="0,246 182,64 182,0 0,0 	"/>
+	<path style="fill:#3F4041;" d="M93,15c0-1.1-0.9-2-2-2s-2,0.9-2,2s0.9,2,2,2S93,16.1,93,15z M83,231c0,4.4,3.6,8,8,8s8-3.6,8-8
+		s-3.6-8-8-8S83,226.6,83,231z M97,231c0,3.3-2.7,6-6,6s-6-2.7-6-6s2.7-6,6-6S97,227.7,97,231z M174,28H8v190h166V28z M172,216H10
+		V30h162V216z M182,219V0H0v246h182v-2H2V2h178v217H182z"/>
+</g>
+<path style="opacity:0.7;fill:#0F6F67;enable-background:new    ;" d="M86.8,94.2L72,70.7l-30,80l30.2-13.1L86.8,94.2z M130.2,112.4
+	L95.4,63.2H71.3l37.1,58.6L130.2,112.4z M36,157.1l23.4,16l73.7-31.3l12.8-32.4L36,157.1z"/>
+</svg>

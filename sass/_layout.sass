@@ -9,6 +9,8 @@ body
 
 .container
   @extend %container
+  &.no-padding
+    padding: 0
 
 .container.flex
   @include display(flex)
