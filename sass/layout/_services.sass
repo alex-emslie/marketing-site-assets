@@ -12,24 +12,36 @@
   .sub-nav
     width: 100%
     background-color: $white
-    height: 70px
-    display: none
+    height: 50px
+    position: fixed
+    z-index: 1000
+    opacity: 0.95
+    margin-top: 63px
     @include media(min-width $tablet)
       margin-top: 70px
-      display: block
     a
-      color: $light-gray
-      line-height: 70px
-      padding-right: 40px
+      color: $dark-gray
+      line-height: 50px
+      text-align: center
+      width: 25%
+      display: block
+      float: left
+      @include media(min-width $tablet)
+        width: inherit
+        padding-right: 40px
+        text-align: left
+        float: none
+        display: inline
       &.active
         font-weight: bold
         color: $black
   .hero.constrained
     background-image: url('../imgs/services/services-hero.jpg')
-    height: 700px
     background-position: bottom center
+    @include media(min-width $mobile)
+      height: 700px
     .hero-copy
-      margin-top: 75px !important
+      margin-top: 120px !important
   .cta
     background-color: $gray
     background-image: none
@@ -64,14 +76,20 @@
     width: 100%
   #trigger1
     .right
-      padding: 30px
+      padding: 30px 0 0 0
       @include span-columns(12)
       @include media(min-width $tablet)
-        @include span-columns(6)
+        @include span-columns(7)
+        padding: 30px
+      svg
+        width: 100%
+        @include media(min-width $tablet)
+          width: 80%
+          margin-left: 10%
     .left
       @include span-columns(12)
       @include media(min-width $tablet)
-        @include span-columns(6)
+        @include span-columns(5)
   #GREEN_CIRCLE
     stroke: transparent
     &.zap
@@ -115,7 +133,7 @@
           min-height: 500px
       .right
         padding: 50px
-        z-index: 1000
+        z-index: 900
         position: relative
         @include media(min-width $tablet)
           padding: 80px 60px 0 15px
@@ -123,7 +141,7 @@
         position: relative
         width: 100%
         display: none
-        @include media(min-width $mobile)
+        @include media(min-width $tablet)
           display: block
         @include media(min-width $tablet)
           position: absolute

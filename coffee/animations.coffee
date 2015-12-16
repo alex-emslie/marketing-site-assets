@@ -37,4 +37,5 @@ hoverBox = ->
     'mouseleave': ->
       $(infoBox).html(staticText)
 
+
 hoverBox()
