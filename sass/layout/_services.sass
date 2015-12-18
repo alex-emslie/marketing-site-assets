@@ -17,8 +17,11 @@
     z-index: 1000
     opacity: 0.95
     margin-top: 63px
+    font-size: 12px
     @include media(min-width $tablet)
       margin-top: 70px
+      font-size: inherit
+      font-size: 14px
     a
       color: $dark-gray
       line-height: 50px
@@ -39,9 +42,11 @@
     background-image: url('../imgs/services/services-hero.jpg')
     background-position: bottom center
     @include media(min-width $mobile)
-      height: 700px
+      height: 850px
     .hero-copy
       margin-top: 120px !important
+      a
+        width: auto
   .cta
     background-color: $gray
     background-image: none
@@ -58,20 +63,20 @@
         border-right: 1px solid $gray
         height: 200px
         padding: 50px
+        border-bottom: 1px solid $gray
         @include span-columns(12)
         @include media(min-width $tablet)
           @include span-columns(3)
           &:last-child
             border-right: 0
-        &:nth-child(-n+2)
-          border-bottom: 1px solid $gray
         @include media(min-width $tablet)
           &:nth-child(-n+2)
-            border-bottom: 1px solid transparent
+            border-bottom: 1px solid $gray
         @include media(min-width $mobile)
           @include span-columns(6)
-    &.first-child
-      border-bottom: 1px solid $gray
+          &.first-child
+            border-bottom: 1px solid $gray
+
   img
     width: 100%
   #trigger1
