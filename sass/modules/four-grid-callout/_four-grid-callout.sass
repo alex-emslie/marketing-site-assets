@@ -11,7 +11,8 @@
     .row
       @include clearfix()
       &:last-child
-        border-bottom: 0
+        .box
+          border-bottom: 1px solid transparent
       .box
         @include span-columns(6)
         position: relative
@@ -38,14 +39,16 @@
           border: 1px solid $dark-gray
           svg
             .hover
-              display: block
+              display: none
             .static
               display: none
-        &:active
-          h3
-            color: $white
-          .white
-            display: block
+            .white
+              display: block
+        // &:active
+        //   h3
+        //     color: $white
+        //   .white
+        //     display: block
         &.active
           background-color: $dark-gray
           color: $white
@@ -69,7 +72,7 @@
     @include span-columns(12)
     @include media(min-width $mobile)
       @include span-columns(7)
-      height: 501px
+      height: 500px
     .content
       max-width: 700px
       position: relative
@@ -78,10 +81,11 @@
         left: 8.33%
         right: 8.33%
     ul
+      padding-left: 20px
       h3
         margin-left: -19px
   svg
     height: 100px
-    width: 100px
+    width: 85px
     .hover
       display: none

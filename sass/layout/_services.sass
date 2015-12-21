@@ -1,8 +1,33 @@
+.animated
+  -webkit-animation-duration: 1.2s
+  animation-duration: 1.2s
+  -webkit-animation-fill-mode: both
+  animation-fill-mode: both
+
 @keyframes dash
   from
     stroke-dashoffset: 1000
   to
     stroke-dashoffset: 0
+
+@keyframes bounceInUp
+  from, 60%, 75%, 90%, to
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  from
+    opacity: 1
+    transform: translate3d(0, 300px, 0)
+  60%
+    opacity: 1
+    transform: translate3d(0, -10px, 0)
+  75%
+    transform: translate3d(0, 7px, 0)
+  90%
+    transform: translate3d(0, -3px, 0)
+  to
+    transform: translate3d(0, 0, 0)
+
+.bounceInUp
+  animation-name: bounceInUp
 
 .services
   h1
@@ -14,23 +39,37 @@
     background-color: $white
     height: 50px
     position: fixed
-    z-index: 1000
+    z-index: 1001
     opacity: 0.95
     margin-top: 63px
     font-size: 12px
     @include media(min-width $tablet)
       margin-top: 70px
       font-size: inherit
-      font-size: 14px
+      font-size: 16px
+    ul
+      margin: 0 0 0 -38px
+    li
+      float: left
+      display: block
+      list-style: none
+      text-align: center
+      width: 25%
+      &.active
+        a
+          color: $black
+          font-weight: bold
+      @include media(min-width $tablet)
+        width: inherit
+        text-align: left
     a
       color: $dark-gray
       line-height: 50px
-      text-align: center
-      width: 25%
       display: block
       float: left
+      padding: 0
+      width: 100%
       @include media(min-width $tablet)
-        width: inherit
         padding-right: 40px
         text-align: left
         float: none
@@ -79,6 +118,7 @@
 
   img
     width: 100%
+    max-width: 900px
   #trigger1
     .right
       padding: 30px 0 0 0
@@ -86,6 +126,8 @@
       @include media(min-width $tablet)
         @include span-columns(7)
         padding: 30px
+      .svg
+        position: relative
       svg
         width: 100%
         @include media(min-width $tablet)
@@ -101,14 +143,39 @@
       stroke: #8DC63F
       stroke-dasharray: 1000
       stroke-dashoffset: 1000
-      animation: dash 1s linear forwards
+      animation: dash 1.5s ease-in-out forwards
+      // animation-delay: .15s
   #BLUE_CIRCLE
     stroke: transparent
     &.zap
       stroke: #2F9BC2
       stroke-dasharray: 1000
       stroke-dashoffset: 1000
-      animation: dash 1s linear forwards
+      animation: dash 1.5s ease-in-out forwards
+  #blue-text
+    position: absolute
+    top: 25%
+    left: 13.3%
+    @include media(min-width $tablet)
+      top: 25%
+      left: 25.5%
+  #green-text
+    position: absolute
+    top: 25%
+    right: 13%
+    @include media(min-width $tablet)
+      top: 25%
+      right: 14.7%
+  #blue-text, #green-text
+    opacity: 0
+    font-size: 10vw
+    @include transition(opacity 0.75s ease-in-out)
+    &.fade-number
+      opacity: 1
+    @include media(min-width $tablet)
+      font-size: 4.7vw
+    @include media(min-width 1400px)
+      font-size: 65px
   .half-grid-callout
     &.services-callout
       .left
@@ -138,7 +205,7 @@
           min-height: 500px
       .right
         padding: 50px
-        z-index: 900
+        z-index: 1000
         position: relative
         @include media(min-width $tablet)
           padding: 80px 60px 0 15px
@@ -146,6 +213,7 @@
         position: relative
         width: 100%
         display: none
+        z-index: 1000
         @include media(min-width $tablet)
           display: block
         @include media(min-width $tablet)
@@ -155,6 +223,19 @@
           right: 0
           overflow: hidden
           width: 100%
+      #sun
+        width: 8%
+        position: absolute
+        top: 54%
+        left: 18%
+        z-index: 100
+        opacity: 0
+        &.animated
+          top: 4%
+          opacity: 1
+      #buildings
+        position: relative
+        z-index: 1000
   .device-parade
     position: relative
     top: 50px
