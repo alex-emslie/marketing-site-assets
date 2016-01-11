@@ -28,12 +28,25 @@ html
 
 h1, .h1
   @extend %headings-1
+  font-size: em($heading-1 * .8)
+  @include media(min-width $mobile)
+    font-size: em($heading-1 * .9)
+  @include media(min-width $tablet)
+    font-size: em($heading-1)
 
 h2, .h2
   @extend %headings-2
   &.bold
     font-weight: bold
     text-transform: uppercase
+  font-size: em($heading_2 * .8)
+  line-height: $heading_2_line/$heading_2
+  margin-bottom: em(20, $heading_2)
+  @include media(min-width $mobile)
+    margin-bottom: em(34, $heading_2)
+    font-size: em($heading_2 * .9)
+  @include media(min-width $tablet)
+    font-size: em($heading_2)
 
 h3, .h3
   @extend %headings-3

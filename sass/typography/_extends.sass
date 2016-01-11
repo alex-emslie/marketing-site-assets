@@ -46,22 +46,27 @@
 %headings-1
   @extend %headings-shared
   @extend %thin-headline
-  font-size: em($heading_1)
   line-height: $heading_1_line/$heading_1
   margin-bottom: em(34, $heading_1)
   letter-spacing: -1px
-
+  font-size: em($heading-1 * .8)
+  @include media(min-width $mobile)
+    font-size: em($heading-1 * .9)
+  @include media(min-width $tablet)
+    font-size: em($heading-1)
 
 %headings-2
   @extend %headings-shared
   @extend %thin-headline
-  font-size: em($heading_2)
+  font-size: em($heading_2 * .8)
   line-height: $heading_2_line/$heading_2
   margin-bottom: em(20, $heading_2)
   @include media(min-width $mobile)
     margin-bottom: em(34, $heading_2)
-
-
+    font-size: em($heading_2 * .9)
+  @include media(min-width $tablet)
+    font-size: em($heading_2)
+    
 %headings-3
   @extend %headings-shared
   @extend %bold-headline

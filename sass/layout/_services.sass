@@ -30,8 +30,6 @@
   animation-name: bounceInUp
 
 .services
-  h1
-    font-size: 2.7em
   .container
     padding: 4.9375em 50px 6em
   .sub-nav
@@ -42,11 +40,11 @@
     z-index: 1000
     opacity: 0.95
     margin-top: 63px
-    font-size: 12px
+    font-size: em($smallest-point-size)
     @include media(min-width $tablet)
       margin-top: 70px
       font-size: inherit
-      font-size: 16px
+      font-size: em($font-size)
     ul
       margin: 0 0 0 -38px
     li
