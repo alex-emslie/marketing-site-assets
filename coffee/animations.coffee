@@ -64,6 +64,9 @@ hoverBox = ->
 
 hoverBox()
 
+$("#specialist").click ->
+  window.open 'http://go.appdirect.com/appdirect-premium-technical-support'
+
 # Cache selectors
 lastId = undefined
 topMenu = $('#button-selector')
