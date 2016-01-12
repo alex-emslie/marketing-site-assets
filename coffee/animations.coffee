@@ -26,8 +26,39 @@ $(window).scroll ->
     if $(this).scrollTop() >= $('#trigger2').offset().top - 500
       $("#sun").attr "class", "bounceInUp animated"
 
+  animateDevices = ->
+    if $(this).scrollTop() >= $('#trigger3').offset().top - 500
+      # animateBottom = ->
+      #   $(".logo_bottom").attr "class", "bounceIn animated fast"
+      # setTimeout animateBottom, 0
+      # animateRight = ->
+      #   $(".logo_right").attr "class", "bounceIn animated fast"
+      # setTimeout animateRight, 100
+      # animateLeft = ->
+      #   $(".logo_left").attr "class", "bounceIn animated fast"
+      # setTimeout animateLeft, 200
+      animateBottom = ->
+        $(".logo_bottom").animate {
+          opacity: 0.9
+          easing: "ease-in-out"
+        }, 150
+      setTimeout animateBottom, 0
+      animateRight = ->
+        $(".logo_right").animate {
+          opacity: 0.9
+          easing: "ease-in-out"
+        }, 150
+      setTimeout animateRight, 150
+      animateLeft = ->
+        $(".logo_left").animate {
+          opacity: 0.9
+          easing: "ease-in-out"
+        }, 150
+      setTimeout animateLeft, 300
+
   animateGraph()
   animateClouds()
+  animateDevices()
 
 hoverBox = ->
   infoBox = ".info-box .right .content"
