@@ -66,14 +66,12 @@
     font-size: em($heading_2 * .9)
   @include media(min-width $tablet)
     font-size: em($heading_2)
-    
+
 %headings-3
   @extend %headings-shared
-  @extend %bold-headline
   font-size: em($heading_3)
   line-height: $heading_3_line/$heading_3
-  margin-bottom: em(5, $heading_3)
-
+    
 %headings-4
   @extend %headings-shared
   @extend %bold-headline
@@ -83,13 +81,16 @@
 
 %headings-5
   @extend %headings-shared
+  @extend %bold-headline
   font-size: em($heading_5)
   line-height: $heading_5_line/$heading_5
+  margin-bottom: em(5, $heading_5)
 
 %headings-6
   @extend %headings-shared
   font-size: em($heading_6)
   line-height: $heading_6_line/$heading_6
+
 
 %label
   @extend %allcaps
