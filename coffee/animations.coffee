@@ -1,33 +1,50 @@
 fireCounter = true
 
-$(window).scroll ->
-  animateGraph = ->
-    if fireCounter == true
-      if $(this).scrollTop() >= $('#trigger1').offset().top - 500
-        $('#GREEN_CIRCLE, #BLUE_CIRCLE').attr "class", "zap"
-        $('.count').each ->
-          $('#blue-text, #green-text').addClass('fade-number')
-          $(this).prop('Counter', 0).animate { Counter: $(this).text() },
-            duration: 1000
-            step: (now) ->
-              $(this).text Math.ceil(now)
-        countDelay = ->
-          $('.count-delay').each ->
-            $('#green-text').addClass('fade-number')
+if $('.js-animate-scroll')[0]
+  $(window).scroll ->
+    animateGraph = ->
+      if fireCounter == true
+        if $(this).scrollTop() >= $('#trigger1').offset().top - 500
+          $('#GREEN_CIRCLE, #BLUE_CIRCLE').attr "class", "zap"
+          $('.count').each ->
+            $('#blue-text, #green-text').addClass('fade-number')
             $(this).prop('Counter', 0).animate { Counter: $(this).text() },
               duration: 1000
               step: (now) ->
                 $(this).text Math.ceil(now)
-        setTimeout countDelay, 250
+          countDelay = ->
+            $('.count-delay').each ->
+              $('#green-text').addClass('fade-number')
+              $(this).prop('Counter', 0).animate { Counter: $(this).text() },
+                duration: 1000
+                step: (now) ->
+                  $(this).text Math.ceil(now)
+          setTimeout countDelay, 250
 
-        fireCounter = false
+          fireCounter = false
 
-  animateClouds = ->
-    if $(this).scrollTop() >= $('#trigger2').offset().top - 500
-      $("#sun").attr "class", "bounceInUp animated"
+    animateClouds = ->
+      if $(this).scrollTop() >= $('#trigger2').offset().top - 500
+        $("#sun").attr "class", "bounceInUp animated"
 
-  animateGraph()
-  animateClouds()
+    animateLogos = ->
+      if $(this).scrollTop() >= $('#trigger3').offset().top - 500
+        $(".logo_bottom").animate {
+          opacity: 1
+          easing: "ease-in-out"
+        }
+        $(".logo_right").animate {
+          opacity: 1
+          easing: "ease-in-out"
+        }, 250
+        $(".logo_left").animate {
+          opacity: 1
+          easing: "ease-in-out"
+        }, 500
+
+    animateLogos()
+    animateGraph()
+    animateClouds()
 
 hoverBox = ->
   infoBox = ".info-box .right .content"
