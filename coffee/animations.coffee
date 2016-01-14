@@ -1,6 +1,7 @@
 fireCounter = true
 
 if $('.js-animate-scroll')[0]
+  console.log 'animated'
   $(window).scroll ->
     animateGraph = ->
       if fireCounter == true
@@ -27,22 +28,35 @@ if $('.js-animate-scroll')[0]
       if $(this).scrollTop() >= $('#trigger2').offset().top - 500
         $("#sun").attr "class", "bounceInUp animated"
 
-    animateLogos = ->
-      if $(this).scrollTop() >= $('#trigger3').offset().top - 500
+    if $(this).scrollTop() >= $('#trigger3').offset().top - 500
+      # animateBottom = ->
+      #   $(".logo_bottom").attr "class", "bounceIn animated fast"
+      # setTimeout animateBottom, 0
+      # animateRight = ->
+      #   $(".logo_right").attr "class", "bounceIn animated fast"
+      # setTimeout animateRight, 100
+      # animateLeft = ->
+      #   $(".logo_left").attr "class", "bounceIn animated fast"
+      # setTimeout animateLeft, 200
+      animateBottom = ->
         $(".logo_bottom").animate {
-          opacity: 1
+          opacity: 0.9
           easing: "ease-in-out"
         }
+      setTimeout animateBottom, 0
+      animateRight = ->
         $(".logo_right").animate {
-          opacity: 1
+          opacity: 0.9
           easing: "ease-in-out"
-        }, 250
+        }
+      setTimeout animateRight, 150
+      animateLeft = ->
         $(".logo_left").animate {
-          opacity: 1
+          opacity: 0.9
           easing: "ease-in-out"
-        }, 500
+        }
+      setTimeout animateLeft, 300
 
-    animateLogos()
     animateGraph()
     animateClouds()
 

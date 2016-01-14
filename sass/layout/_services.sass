@@ -4,6 +4,12 @@
   -webkit-animation-fill-mode: both
   animation-fill-mode: both
 
+.animated.fast
+  -webkit-animation-duration: 0.5s
+  animation-duration: 0.5s
+  -webkit-animation-fill-mode: both
+  animation-fill-mode: both 
+
 @keyframes dash
   from
     stroke-dashoffset: 1000
@@ -26,12 +32,40 @@
   to
     transform: translate3d(0, 0, 0)
 
+@keyframes bounceIn
+  from, 50%, 90% to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+  0%
+    opacity: 0
+    -webkit-transform: scale3d(0.3, 0.3, 0.3)
+    transform: scale3d(0.8, 0.8, 0.8)
+  50%
+    opacity: 1
+    -webkit-transform: scale3d(1.1, 1.1, 1.1)
+    transform: scale3d(1.1, 1.1, 1.1)
+  90%
+    -webkit-transform: scale3d(0.9, 0.9, 0.9)
+    transform: scale3d(0.9, 0.9, 0.9)
+  // 60%
+  //   opacity: 1
+  //   -webkit-transform: scale3d(1.03, 1.03, 1.03)
+  //   transform: scale3d(1.03, 1.03, 1.03)
+  // 80%
+  //   -webkit-transform: scale3d(0.97, 0.97, 0.97)
+  //   transform: scale3d(0.97, 0.97, 0.97)
+  to
+    opacity: 1
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+
+.bounceIn
+  animation-name: bounceIn
+
 .bounceInUp
   animation-name: bounceInUp
 
 .services
-  h1
-    font-size: 2.7em
   .container
     padding: 4.9375em 50px 6em
   .sub-nav
@@ -42,11 +76,11 @@
     z-index: 1000
     opacity: 0.95
     margin-top: 63px
-    font-size: 12px
+    font-size: em($smallest-point-size)
     @include media(min-width $tablet)
       margin-top: 70px
       font-size: inherit
-      font-size: 16px
+      font-size: em($font-size)
     ul
       margin: 0 0 0 -38px
     li
@@ -198,7 +232,7 @@
         height: 500px
     &.clouds
       background-color: #ebfcff
-      border-bottom: 2px solid #000
+      border-bottom: 2px solid $black
       .left
         min-height: inherit
         @include media(min-width $tablet)
@@ -243,5 +277,12 @@
       top: 75px
     @include media(min-width $tablet)
       top: 100px
-    .logo_right, .logo_left, .logo_bottom
+    .logo_bottom
       opacity: 0
+    .logo_right
+      opacity: 0
+    .logo_left
+      opacity: 0
+    svg 
+      max-width: 950px
+      width: 100%

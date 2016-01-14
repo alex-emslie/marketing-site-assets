@@ -26,7 +26,7 @@
   ul.bullets
     margin: 10px 0
     padding-left: 17px
-    font-size: 14px
+    font-size: em($small-point-size)
     margin-top: 4px !important
     li
       margin-bottom: 0
@@ -48,8 +48,12 @@
     @extend %icon-shape
     position: relative
     top: em(-3)
-  &.dark svg
-    fill: $light-gray
+  &.dark
+    svg
+      fill: $light-gray
+    h4
+      a
+        color: $white
   @include media(min-width $tablet)
     @include span-columns(8)
     @include shift(2)
