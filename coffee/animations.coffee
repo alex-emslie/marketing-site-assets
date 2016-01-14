@@ -1,32 +1,33 @@
 fireCounter = true
 
-$(window).scroll ->
-  animateGraph = ->
-    if fireCounter == true
-      if $(this).scrollTop() >= $('#trigger1').offset().top - 500
-        $('#GREEN_CIRCLE, #BLUE_CIRCLE').attr "class", "zap"
-        $('.count').each ->
-          $('#blue-text, #green-text').addClass('fade-number')
-          $(this).prop('Counter', 0).animate { Counter: $(this).text() },
-            duration: 1000
-            step: (now) ->
-              $(this).text Math.ceil(now)
-        countDelay = ->
-          $('.count-delay').each ->
-            $('#green-text').addClass('fade-number')
+if $('.js-animate-scroll')[0]
+  console.log 'animated'
+  $(window).scroll ->
+    animateGraph = ->
+      if fireCounter == true
+        if $(this).scrollTop() >= $('#trigger1').offset().top - 500
+          $('#GREEN_CIRCLE, #BLUE_CIRCLE').attr "class", "zap"
+          $('.count').each ->
+            $('#blue-text, #green-text').addClass('fade-number')
             $(this).prop('Counter', 0).animate { Counter: $(this).text() },
               duration: 1000
               step: (now) ->
                 $(this).text Math.ceil(now)
-        setTimeout countDelay, 250
+          countDelay = ->
+            $('.count-delay').each ->
+              $('#green-text').addClass('fade-number')
+              $(this).prop('Counter', 0).animate { Counter: $(this).text() },
+                duration: 1000
+                step: (now) ->
+                  $(this).text Math.ceil(now)
+          setTimeout countDelay, 250
 
-        fireCounter = false
+          fireCounter = false
 
-  animateClouds = ->
-    if $(this).scrollTop() >= $('#trigger2').offset().top - 500
-      $("#sun").attr "class", "bounceInUp animated"
+    animateClouds = ->
+      if $(this).scrollTop() >= $('#trigger2').offset().top - 500
+        $("#sun").attr "class", "bounceInUp animated"
 
-  animateDevices = ->
     if $(this).scrollTop() >= $('#trigger3').offset().top - 500
       # animateBottom = ->
       #   $(".logo_bottom").attr "class", "bounceIn animated fast"
@@ -41,24 +42,23 @@ $(window).scroll ->
         $(".logo_bottom").animate {
           opacity: 0.9
           easing: "ease-in-out"
-        }, 150
+        }
       setTimeout animateBottom, 0
       animateRight = ->
         $(".logo_right").animate {
           opacity: 0.9
           easing: "ease-in-out"
-        }, 150
+        }
       setTimeout animateRight, 150
       animateLeft = ->
         $(".logo_left").animate {
           opacity: 0.9
           easing: "ease-in-out"
-        }, 150
+        }
       setTimeout animateLeft, 300
 
-  animateGraph()
-  animateClouds()
-  animateDevices()
+    animateGraph()
+    animateClouds()
 
 hoverBox = ->
   infoBox = ".info-box .right .content"
