@@ -1,0 +1,30 @@
+.stacked-list
+	.container
+		padding: 25px 10px 30px
+	.stacked-list-item
+		background: #fff
+		&.even
+			background: #F5F8F7
+		&:hover
+			color: white
+			background: #2F9BC2
+			.list-meta
+				color: white
+	a
+		display: block
+		color: black
+	.list-image
+		display: none
+		@include media(min-width $tablet)
+			display: block
+			float: left
+			width: 100px
+			margin-left: 45px
+	.list-text
+		@include media(min-width $tablet)
+			float: left
+			margin-left: 45px
+	.list-meta
+		@extend %allcaps
+		@include media(min-width $tablet)
+			color: $light-gray

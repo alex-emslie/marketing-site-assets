@@ -30,6 +30,60 @@ body
 
 .callout-list
   @extend %callout-list
+.row
+  @include clearfix
+.grid
+  height: 50px
+  &.gray
+    background-color: $gray
+  &.dark
+    background-color: $light-gray
+  &.twelve
+    @include span-columns(12)
+  &.eleven
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(11)
+  &.ten
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(10)
+  &.nine
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(9)
+  &.eight
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(8)
+  &.seven
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(7)
+  &.six
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(6)
+  &.five
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(5)
+  &.four
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(4)
+  &.three
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(3)
+  &.two
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(2)
+  &.one
+    @include span-columns(12)
+    @include media(min-width $mobile)
+      @include span-columns(1)
 
 .half-graphic
   @extend %half-width

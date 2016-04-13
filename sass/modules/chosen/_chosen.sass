@@ -1,26 +1,63 @@
 .chosen-container
-	position: relative
-	display: inline-block
-	font-size: inherit
-	zoom: 1
-	*display: inline
+	display: block
+	font-size: 30px
+	padding: 15px 30px
+	@include media(min-width $tablet)
+		display: inline-block
+		font-size: 32
+		zoom: 1
+		*display: inline
+
+	@include media(min-width $desktop)
+		position: relative
+	&.chosen-with-drop
+		background: $green
+		a
+			color: $white
+		@include media(min-width $desktop)
+			background: transparent
+			a
+				color: $green
+	&:after
+		@include media(min-width $tablet)
+			@include triangle(12px, $green, down)
+.chosen-single
+	display: block
+	cursor: pointer
+	width: 100%
+	@include media(min-width $tablet)
+		width: auto
+	
 
 .chosen-drop
 	@extend %vertical-nav
 	@extend %arrow-top
 	position: absolute
-	top: 100%
+	
 	left: -9999px
 	z-index: 1010
 	width: 100%
-	min-width: 200px
+	&:before
+		display: none !important
+	@include media(min-width $tablet)
+		border-top: 5px solid $green
+	@include media(min-width $desktop)
+		top: 100%
+		border: none
+		&:before
+			display: block !important
+		
 
 .chosen-with-drop .chosen-drop
-	left: 0
+	left: 0px
+	right: 0px
+	@include media(min-width $tablet)
+		right: auto
 
 .chosen-results
-	height: 215px
-	overflow-y: scroll
+	@include media(min-width $desktop)
+		height: 215px
+		overflow-y: scroll
 	li
 		font-size: 16px
 // I'm permanently disabling search for the time being.

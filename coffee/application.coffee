@@ -77,6 +77,7 @@ class Megapane
 
 
 $ ->
+
   ad = ad || {}
   if window.location.href.indexOf('github') >= 0
     svgs_url = './assets_new/svg/svgs.svg'
@@ -105,6 +106,19 @@ $ ->
         $('g#btn-1').attr("class", "step-1 active")
 
   ad.sr = new scrollReveal(scrollConfig) unless $('html').hasClass('ie8')
+
+  $('.stacked-list-item').hover(
+    ->
+      $img = $(this).find('.list-image')
+      $img.attr('src', $img.attr('src').replace("_light.svg", "_dark.svg"))
+    , ->
+      $img = $(this).find('.list-image')
+      $img.attr('src', $img.attr('src').replace("_dark.svg", "_light.svg"))
+  )
+    
+  $('.js-filter-show').on "click", (e) ->
+    e.preventDefault()
+    $(this).siblings('.filter-container').toggleClass("open")
 
   unless $('html').is('[class^="ie"]')
     $('#graph g[id^="btn"]').hover(

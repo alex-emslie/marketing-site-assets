@@ -1,0 +1,42 @@
+.ee-filter
+	color: $white
+	.container
+		padding: 20px 0 0 0
+		@include media(min-width $desktop)
+			padding-bottom: 20px
+	.headline
+		border-bottom: 1px solid $white
+		padding-bottom: 20px
+		margin: 0
+		@include media(min-width $tablet)
+			border: none
+		@include media(min-width $desktop)
+			display: inline-block
+	.filters
+		padding: 15px 20px
+		margin: 0
+		cursor: pointer
+		&:hover
+			color: $green
+	.filter-container
+		display: none
+		&.open
+			display: block
+			@include media(min-width $desktop)
+				display: inline-block
+		@include media(min-width $tablet)
+			display: block
+			padding: 0 40px
+		@include media(min-width $desktop)
+			display: inline-block
+	h1
+		padding: 0 20px
+		@include media(min-width $tablet)
+			padding: 0 40px
+	.desktop
+		display: none
+		@include media(min-width $tablet)
+			display: inline
+	.mobile
+		@include media(min-width $tablet)
+			display: none
