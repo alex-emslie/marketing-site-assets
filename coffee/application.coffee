@@ -120,6 +120,46 @@ $ ->
     e.preventDefault()
     $(this).siblings('.filter-container').toggleClass("open")
 
+  if $('.js-ee-filter').length > 0
+    path = window.location.pathname
+    #console.log path
+    #TODO we could make this more extensible by splitting, dropping empty vals and popping the first value
+    p_arr = path.replace(/^\/resources\/?/g, "").split("/").filter(Boolean)
+    
+    if p_arr.length > 1
+      p_obj = {}
+      for segment, i in p_arr by 2
+        p_obj[segment] = p_arr[i + 1]
+      for key, value of p_obj
+        $('.js-ee-filter[data-segment-key=' + key + ']').val(value)
+
+  $('.js-ee-filter').on "change", (e) ->
+    new_value = $(this).val()
+    #console.log new_value
+    changing_key = $(this).attr('data-segment-key')
+    server = window.location.origin
+    path = window.location.pathname
+    p_arr = path.replace(/^\/resources\/?/g, "").split("/").filter(Boolean)
+    #console.log p_arr
+    p_obj = {}
+    for segment, i in p_arr by 2
+      p_obj[segment] = p_arr[i + 1]
+
+    if new_value == "clear"
+      delete p_obj[changing_key]
+    else
+      p_obj[changing_key] = new_value
+
+    rv = []
+    for key, value of p_obj
+      rv.push(key, value)
+      #console.log rv
+
+    window.location = server + "/resources/" + rv.join("/")
+    
+
+    
+
   unless $('html').is('[class^="ie"]')
     $('#graph g[id^="btn"]').hover(
       ->
