@@ -123,8 +123,7 @@ $ ->
   if $('.js-ee-filter').length > 0
     path = window.location.pathname
     #console.log path
-    #TODO we could make this more extensible by splitting, dropping empty vals and popping the first value
-    p_arr = path.replace(/^\/resources\/?/g, "").split("/").filter(Boolean)
+    p_arr = path.replace(/^\/[a-z]*\/?/g, "").split("/").filter(Boolean)
     
     if p_arr.length > 1
       p_obj = {}
@@ -139,7 +138,7 @@ $ ->
     changing_key = $(this).attr('data-segment-key')
     server = window.location.origin
     path = window.location.pathname
-    p_arr = path.replace(/^\/resources\/?/g, "").split("/").filter(Boolean)
+    p_arr = path.replace(/^\/[a-z]*\/?/g, "").split("/").filter(Boolean)
     #console.log p_arr
     p_obj = {}
     for segment, i in p_arr by 2
