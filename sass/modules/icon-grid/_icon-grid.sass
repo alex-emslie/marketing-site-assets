@@ -24,20 +24,25 @@
       position: absolute
       top: -13px
       margin-left: -17px
-      height: 36px
-      width: 36px
+      height: 50px
+      width: 50px
       border-radius: 18px
       cursor: pointer
       svg
         width: 100%
-        height: 2em
+        height: 50px
         fill: #00ffff
         display: none
         @include transition(fill 0.2s ease-in)
-        &:hover
-          fill: $white
         @include media(min-width $tablet)
           display: block
+      &:hover
+        svg
+        fill: $white
+          circle
+            fill: $blue !important
+          path
+            fill: $blue !important
     p
       position: relative
       float: right
