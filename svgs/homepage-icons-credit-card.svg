@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<g id="Credit_Card_Icon_1_">
+	<rect style="fill:none;" width="50" height="50"/>
+	<g>
+		<rect x="5" y="12" style="fill:#DFE0E0;" width="40" height="28"/>
+		<polygon style="fill:#EFEFEF;" points="5,40 5,12 33,12 		"/>
+	</g>
+	<g>
+		<rect x="11" y="20" style="fill:#A6D7EA;" width="34" height="3"/>
+		<polygon style="fill:#D3EBF4;" points="11,20 11,23 22,23 25,20 		"/>
+	</g>
+	<path style="fill:#3F4041;" d="M45,17v-5H5v28h40V23H11v-3h34v-2H9v7h34v13H7V14h36v3H45z M32,27v6h9v-6H32z M39,31h-5v-2h5V31z
+		 M30,27H9v2h21V27z M9,33h12v-2H9V33z"/>
+</g>
+</svg>

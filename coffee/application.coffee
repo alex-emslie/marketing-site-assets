@@ -175,9 +175,9 @@ $ ->
         # $(".#{target}").find(".ring").css("-webkit-transform", "rotate(360deg)")
     )
 
-  $('.ga_push').on "click", ->
-    text = $(this).attr("data-eventname")
-    _gaq.push(['_trackEvent', text])
+  # $('.ga_push').on "click", ->
+  #   text = $(this).attr("data-eventname")
+  #   _gaq.push(['_trackEvent', text])
 
   _hsq = window._hsq = window._hsq || []
   $('*[data-hubsp-eventname]').on "click", (e) ->
