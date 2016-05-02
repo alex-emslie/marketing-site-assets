@@ -1,7 +1,7 @@
 fireCounter = true
 
 if $('.js-animate-scroll')[0]
-  console.log 'animated'
+  #console.log 'animated'
   $(window).scroll ->
     animateGraph = ->
       if fireCounter == true
