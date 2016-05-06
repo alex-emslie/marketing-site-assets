@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:none;}
-	.st1{fill:#3F4041;}
-	.st2{opacity:0.1;fill:#FFFFFF;}
-	.st3{fill:#237491;}
-	.st4{fill:#FFFFFF;}
-</style>
 <g id="Market_Icon_2_">
-	<rect class="st0" width="50" height="50"/>
 	<g>
-		<polygon class="st1" points="4,17 4,42 10,42 10,27 21,27 21,42 46,42 46,17 		"/>
-		<polygon class="st2" points="10,27 19,27 29,17 4,17 4,42 10,36 		"/>
+		<polygon style="fill:#3F4041;" points="4,17 4,42 10,42 10,27 21,27 21,42 46,42 46,17 		"/>
+		<polygon style="opacity:0.1;fill:#FFFFFF;enable-background:new    ;" points="10,27 19,27 29,17 4,17 4,42 10,36 		"/>
 	</g>
 	<g>
-		<path class="st3" d="M4,7v10c0,3.3,2.7,6,6,6c2.1,0,3.9-1.1,5-2.7c1.1,1.6,2.9,2.7,5,2.7s3.9-1.1,5-2.7c1.1,1.6,2.9,2.7,5,2.7
-			s3.9-1.1,5-2.7c1.1,1.6,2.9,2.7,5,2.7c3.3,0,6-2.7,6-6V7H4z"/>
-		<path class="st2" d="M10,23c2.1,0,3.9-1.1,5-2.7c1.1,1.6,2.9,2.7,5,2.7s3.9-1.1,5-2.7c0.1,0.1,0.2,0.3,0.3,0.4L39,7H4v10
-			C4,20.3,6.7,23,10,23z"/>
+		<path style="fill:#237491;" d="M4,7v10c0,3.3,2.7,6,6,6c2.1,0,3.9-1.1,5-2.7c1.1,1.6,2.9,2.7,5,2.7s3.9-1.1,5-2.7
+			c1.1,1.6,2.9,2.7,5,2.7s3.9-1.1,5-2.7c1.1,1.6,2.9,2.7,5,2.7c3.3,0,6-2.7,6-6V7H4z"/>
+		<path style="opacity:0.1;fill:#FFFFFF;enable-background:new    ;" d="M10,23c2.1,0,3.9-1.1,5-2.7c1.1,1.6,2.9,2.7,5,2.7
+			s3.9-1.1,5-2.7c0.1,0.1,0.2,0.3,0.3,0.4L39,7H4v10C4,20.3,6.7,23,10,23z"/>
 	</g>
-	<path class="st4" d="M46,16V7H4v10c0,3.3,2.7,6,6,6c2.1,0,3.9-1.1,5-2.7c1.1,1.6,2.9,2.7,5,2.7s3.9-1.1,5-2.7
+	<path style="fill:#FFFFFF;" d="M46,16V7H4v10c0,3.3,2.7,6,6,6c2.1,0,3.9-1.1,5-2.7c1.1,1.6,2.9,2.7,5,2.7s3.9-1.1,5-2.7
 		c1.1,1.6,2.9,2.7,5,2.7s3.9-1.1,5-2.7c1.1,1.6,2.9,2.7,5,2.7c1.5,0,2.9-0.6,4-1.5V40H23V25H8v15H6V23H4v19h6V27h11v15h25V17h-2
 		c0,2.2-1.8,4-4,4s-4-1.8-4-4h-2c0,2.2-1.8,4-4,4s-4-1.8-4-4h-2c0,2.2-1.8,4-4,4s-4-1.8-4-4h-2c0,2.2-1.8,4-4,4s-4-1.8-4-4V9h38v7
 		H46z M25,25v13h17V25H25z M40,36H27v-9h13V36z M17,39h2v-2h-2V39z M12,35h7v-6h-7V35z M14,31h3v2h-3V31z"/>
