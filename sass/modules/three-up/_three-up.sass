@@ -1,54 +1,49 @@
 .three-up
-  .row
-    @include row()
-  .column
-    @include span-columns(12)
-    &:hover
-      .featured-text
-        background: #fff
-        &.on-black
-          background: #000
-      .featured-image img
-        opacity: .99999
-        
-    @include media(min-width $tablet)
-      @include span-columns(6)
-    @include media(min-width $desktop)
-      @include span-columns(4)
-  .col2, .col3
-    display: none !important
-  @include media(min-width $tablet)
-    .col2
-      display: block !important
-  @include media(min-width $desktop)
-    .col3
-      display: block !important
-      @include omega
-      .featured-text
-        border: none
-  .featured-text
-    height: auto
-    background: #f2f2f2
-    padding: 20px
-    text-align: center
-    &.on-black
-      background: #000
-      color: $white
-      .button
-        @extend %button-light
-    @include media(min-width $tablet)
-      height: 340px
-      text-align: left
-      padding: 40px
-      position: relative
-      border-right: 1px solid #ADAEAF
-      .button
-        position: absolute
-        left: 40px
-        bottom: 40px
-  .featured-image img
-    background: $black
-    display: block
-    width: 100%
-    opacity: .9
+	.row
+		@include row()
+	.column
+		@include span-columns(12)
+		&:hover
+			.featured-text
+				background: #fff
+			.featured-image img
+				opacity: .99999
+				
+		@include media(min-width $tablet)
+			@include span-columns(6)
+		@include media(min-width $desktop)
+			@include span-columns(4)
+	.col2, .col3
+		display: none !important
+	@include media(min-width $tablet)
+		.col2
+			display: block !important
+	@include media(min-width $desktop)
+		.col3
+			display: block !important
+			@include omega
+			.featured-text
+				border: none
+	.featured-text
+		height: auto
+		background: #f2f2f2
+		padding: 20px
+		text-align: center
+		@include media(min-width $tablet)
+			height: 340px
+			text-align: left
+			padding: 40px
+			position: relative
+			border-right: 1px solid #ADAEAF
+			.button
+				position: absolute
+				left: 40px
+				bottom: 40px
+	.featured-image
+		max-height: 375px
+		img
+			background: $black
+			display: block
+			width: 100%
+			opacity: .9
 
