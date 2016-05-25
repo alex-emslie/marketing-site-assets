@@ -2,6 +2,7 @@
 @import "layout/mixins"
 @import "layout/home"
 @import "layout/services"
+@import "layout/solutions"
 
 body
   &.overflow
@@ -30,10 +31,16 @@ body
 
 .callout-list
   @extend %callout-list
+
 .row
   @include clearfix
+  &.black
+    background-color: black
+    color: white
+
 .grid
-  height: 50px
+  &.black
+    background-color: black
   &.gray
     background-color: $gray
   &.dark

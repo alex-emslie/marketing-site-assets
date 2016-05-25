@@ -1,5 +1,9 @@
 .four-grid-callout
   @include clearfix()
+  &.on-black
+    .left
+      background-color: #000
+      color: #fff
   .left
     background-color: $white
     height: 100%
@@ -8,6 +12,7 @@
     @include media(min-width $mobile)
       @include span-columns(5)
       height: 100%
+
     .row
       @include clearfix()
       &:last-child

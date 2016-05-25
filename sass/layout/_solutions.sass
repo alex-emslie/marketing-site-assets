@@ -1,0 +1,61 @@
+.objectives
+  @extend %bullets
+  li
+    font-size: 20px
+  img
+    width: 150px
+    height: 150px
+    border-radius: 150px
+    margin-left: -32px
+    float: left
+  .quote
+    clear: both
+    padding: 26px
+    font-size: 30px
+  .person-data
+    padding-top: 45px
+
+.tab-content-image img
+  min-width: 90%
+.graph
+  .grid
+    img
+      max-width: 100%
+.tab-triggers
+  display: none
+  @include media(min-width $tablet)
+    display: block
+
+.tab-trigger-mobile-only
+  @include media(min-width $tablet)
+    display: none
+
+.reach-out
+  position: relative
+  .grid
+    padding: 45px
+
+.block-links
+  color: white
+  .container
+    max-width: 900px
+  .solution-item
+    display: block
+    text-align: center
+    background: #3F4041
+    width: 47.5%
+    margin: 1% 1%
+    float: left
+    padding: 30px 30px 15px 30px
+    color: white
+    font-size: 20px
+    img
+      display: block
+      width: 45%
+      margin: 0 auto
+      padding-bottom: 20px
+    &:hover
+      background: #545454
+      color: $green
+    @include media(min-width $tablet)
+      width: 30%

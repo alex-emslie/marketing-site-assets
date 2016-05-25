@@ -107,6 +107,28 @@ $('.info-box a').click (e) ->
   infoBox.removeClass 'active'
   $this.addClass 'active'
 
+$('.tab-triggers a').click (e) ->
+  e.preventDefault()
+  tabgroup = $(this).parents('.tabs')
+  contentarea = tabgroup.find('.tab-content-area')
+  target = $(this).attr('href')
+  tabgroup.find(".tab-triggers a.active").removeClass('active')
+  contentarea.find('.active').removeClass('active')
+  $('.tab-triggers-select').val("#{target}").trigger("chosen:updated")
+  $(this).addClass('active')
+  contentarea.find("#{target}").addClass('active')
+
+$('.tab-triggers-select').on "change", (e) ->
+  e.preventDefault()
+  tabgroup = $(this).parents('.tabs')
+  contentarea = tabgroup.find('.tab-content-area')
+  target = $(this).val()
+  tabgroup.find('.tab-triggers .active').removeClass('active')
+  tabgroup.find('.tab-triggers a[href="' + target + '"]').addClass('active')
+  contentarea.find('.active').removeClass('active')
+  contentarea.find("#{target}").addClass('active')
+
+
 if $('.js-scroll-hook')[0]
   # Cache selectors
   lastId = undefined

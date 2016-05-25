@@ -1,0 +1,59 @@
+.tabs
+  padding: 4.9375em 0 0
+  &.tabs-no-padding
+    padding: 0
+  .tab-content
+    display: none
+    &.active
+      display: block
+  .tab-inline
+    @extend %no-style-list
+    li
+      float: left
+      margin-bottom: 20px
+    a
+      outline: 0
+      color: #000
+      font-size: 20px
+      margin-right: 50px
+      display: inline-block
+      &:hover
+        color: $green
+      &.active
+        font-weight: bold
+        color: $blue
+        position: relative
+        &:after
+          content: ""
+          display: block
+          position: absolute
+          bottom: -32px
+          left: 50%
+          margin-left: -12.5px
+          @include triangle(25px, white, down)
+  .tab-area
+    background: #f2f2f2
+    &.on-black 
+      background: #000
+      color: #fff
+      h1, h2, h3, h4, h5, h6
+        color: $blue
+    .left
+      @include media(min-width $mobile)
+        float: left
+        @include span-columns(7)
+        & ~ .tab-content-text
+          float: left
+          @include span-columns(5)
+    .right
+      @include media(min-width $mobile)
+        @include span-columns(7)
+        float: right
+        & ~ .tab-content-text
+          float: left
+          @include span-columns(5)
+  .tab-content
+    overflow: auto
+    padding: 3em 0 6em
+    @extend %bullets
+
