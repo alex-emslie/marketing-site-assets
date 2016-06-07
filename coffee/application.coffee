@@ -79,12 +79,17 @@ class Megapane
 $ ->
 
   ad = ad || {}
-  if window.location.href.indexOf('github') >= 0
-    svgs_url = './assets_new/svg/svgs.svg'
-  else if window.location.href.indexOf('local') == -1
-    svgs_url = 'http://info.appdirect.com/assets_new/svg/svgs.svg'
-  else
-    svgs_url = '/assets_new/svg/svgs.svg'
+  subdomain = window.location.host.split('.')[0]
+  switch subdomain
+    when 'www'
+      # production
+      svgs_url = 'http://info.appdirect.com/assets_new/svg/svgs.svg'
+    when 'ad-dc'
+      # github / project-runway
+      svgs_url = './assets_new/svg/svgs.svg'
+    else
+      # dev, staging, local, info.appdirect
+      svgs_url = '/assets_new/svg/svgs.svg'
   $.get svgs_url, (data) ->
     div = document.createElement("div")
     div.className = "svgstore"
