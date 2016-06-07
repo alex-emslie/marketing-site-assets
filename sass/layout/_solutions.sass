@@ -8,19 +8,40 @@
     border-radius: 150px
     margin-left: -32px
     float: left
+    margin-right: 20px
   .quote
     clear: both
     padding: 26px
     font-size: 30px
   .person-data
     padding-top: 45px
+  .grid
+    padding: 0 20px
+    @include media(min-width $tablet)
+      padding: 0 40px
 
 .tab-content-image img
   min-width: 90%
+
 .graph
   .grid
     img
       max-width: 100%
+
+.tabs.on-white
+  padding: 80px 20px 0
+  @include media(min-width $tablet)
+    padding: 0
+    .container
+      padding: 80px 30px 0
+
+.case-study
+  padding: 0 20px
+  @include media(min-width $tablet)
+    padding: 0 40px
+.tabs .tab-content .tab-content-text
+  ul
+    font-size: 16px
 .tab-triggers
   display: none
   @include media(min-width $tablet)

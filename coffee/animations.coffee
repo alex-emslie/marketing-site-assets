@@ -143,6 +143,6 @@ if $('.js-scroll-hook')[0]
   # so we can get a fancy scroll animation
   menuItems.click (e) ->
     href = $(this).attr('href')
-    offsetTop = if href == '#' then 0 else $(href).offset().top - topMenu.outerHeight() - 65
+    offsetTop = if href == '#' then 0 else $(href).offset().top - topMenu.outerHeight()
     $('html, body').stop().animate { scrollTop: offsetTop }, 650
     e.preventDefault()

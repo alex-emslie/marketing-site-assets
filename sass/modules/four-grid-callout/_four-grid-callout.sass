@@ -4,6 +4,8 @@
     .left
       background-color: #000
       color: #fff
+      .row .box
+        border-color: $dark-gray
   .left
     background-color: $white
     height: 100%
@@ -25,6 +27,7 @@
         padding: 50px 30px
         height: 130px
         cursor: pointer
+        outline: 0
         border-right: 1px solid $gray
         border-bottom: 1px solid $gray
         .vertical-align
@@ -68,7 +71,10 @@
           height: 250px
           svg
             display: inline
-
+  &.tabs-hover-blue
+    .left .row .box
+      &:hover
+        background-color: $blue
   .right
     background-color: $cool-white
     padding: 50px
