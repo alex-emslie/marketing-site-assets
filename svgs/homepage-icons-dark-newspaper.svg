@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:none;}
-	.st1{fill:#3F4041;}
-	.st2{opacity:0.1;fill:#FFFFFF;}
-	.st3{fill:#237491;}
-	.st4{fill:#FFFFFF;}
-</style>
-<g id="News_Icon_2_">
-	<rect class="st0" width="50" height="50"/>
-	<g>
-		<polygon class="st1" points="42,17 42,16 32,6 4,6 4,40 6,40 6,45 46,45 46,17 		"/>
-		<polygon class="st2" points="32,6 4,6 4,40 35,9 		"/>
+<g id="Layer_2">
+</g>
+<g id="Layer_1_1_">
+	<g id="News_Icon_2_">
+		<g>
+			<polygon style="fill:#3F4041;" points="42,17 42,16 32,6 4,6 4,40 6,40 6,45 46,45 46,17 			"/>
+			<polygon style="opacity:0.1;fill:#FFFFFF;enable-background:new    ;" points="32,6 4,6 4,40 35,9 			"/>
+		</g>
+		<g>
+			<path style="fill:#237491;" d="M26,34H10V20h16V34z"/>
+			<polygon style="opacity:0.1;fill:#FFFFFF;enable-background:new    ;" points="10,20 10,34 24,20 			"/>
+		</g>
+		<path style="fill:#FFFFFF;" d="M38,26h-8v2h8V26z M38,30h-8v2h8V30z M40,17v21H6V8h25.2l6,6H32v-4h-2v6h12L32,6H4v34h38V19h2v24H8
+			v-2H6v4h40V17H40z M30,36h8v-2h-8V36z M38,22h-8v2h8V22z M38,18h-8v2h8V18z M8,36h20V18H8V36z M10,20h16v14H10V20z M28,10H8v6h20
+			V10z M26,14H10v-2h16V14z"/>
 	</g>
-	<g>
-		<path class="st3" d="M26,34H10V20h16V34z"/>
-		<polygon class="st2" points="10,20 10,34 24,20 		"/>
-	</g>
-	<path class="st4" d="M38,26h-8v2h8V26z M38,30h-8v2h8V30z M40,17v21H6V8h25.2l6,6H32v-4h-2v6h12L32,6H4v34h38V19h2v24H8v-2H6v4h40
-		V17H40z M30,36h8v-2h-8V36z M38,22h-8v2h8V22z M38,18h-8v2h8V18z M8,36h20V18H8V36z M10,20h16v14H10V20z M28,10H8v6h20V10z M26,14
-		H10v-2h16V14z"/>
 </g>
 </svg>
