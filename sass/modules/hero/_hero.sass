@@ -9,8 +9,13 @@
   &.constrained
     height: 480px
     min-height: 0
+<<<<<<< Updated upstream
   &.w-padding
     padding-top: 70px
+=======
+    .hero-copy
+      margin-top: 90px !important
+>>>>>>> Stashed changes
 
   .container
     padding: 43px 0 0
@@ -20,6 +25,41 @@
       padding-right: 20px
       &:last-child
         padding-right: 0
+  .videoContainer
+    position: absolute
+    overflow: hidden
+    z-index: -1
+    width: 100%
+    min-height: 780px
+    height: 100%
+    @include media(min-width $mobile)
+      height: inherit
+      height: 100vh
+    video
+      display: none
+      @include media(min-width $mobile)
+        opacity: 0
+        display: block
+        position: absolute
+        right: 50%
+        bottom: 50%
+        left: auto
+        @include transform(translateX(50%) translateY(50%))
+        z-index: -1
+        min-width: 100%
+        min-height: 100%
+        width: auto
+        height: auto
+        overflow: hidden
+  .js-poster
+    z-index: -1
+    min-width: 100%
+    min-height: 100%
+    .csstransforms &
+      position: absolute
+      bottom: 50%
+      right: 50%
+      @include transform(translateX(50%) translateY(50%))
 
 .hero-copy
   @include span-columns(12)

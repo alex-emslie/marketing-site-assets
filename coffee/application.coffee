@@ -79,6 +79,7 @@ class Megapane
 $ ->
 
   ad = ad || {}
+<<<<<<< Updated upstream
   subdomain = window.location.host.split('.')[0]
   switch subdomain
     when 'www'
@@ -90,6 +91,17 @@ $ ->
     else
       # dev, staging, local, info.appdirect
       svgs_url = '/assets_new/svg/svgs.svg'
+=======
+  ###############
+  # SVG LOCATIONS
+  ###############
+  if window.location.href.indexOf('github') >= 0
+    svgs_url = './assets_new/svg/svgs.svg'
+  else if window.location.href.indexOf('local') == -1
+    svgs_url = 'http://info.appdirect.com/assets_new/svg/svgs.svg'
+  else
+    svgs_url = '/assets_new/svg/svgs.svg'
+>>>>>>> Stashed changes
   $.get svgs_url, (data) ->
     div = document.createElement("div")
     div.className = "svgstore"
@@ -97,6 +109,9 @@ $ ->
     document.body.insertBefore(div, document.body.childNodes[0])
     $('body').removeClass('no-svgs').addClass('svgs-loaded')
 
+  #############################################
+  # Calculations for hero copy centering
+  #############################################
   ad.heroCenter = ->
     if matchMedia('only screen and (min-width: 750px)').matches && $('.hero-copy').length > 0
       $('.hero-copy').css "margin-top" : ($('.hero').height() - $('.hero-copy').height() - 65) / 2

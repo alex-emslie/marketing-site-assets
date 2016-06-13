@@ -47,10 +47,10 @@
 %container
   position: relative
   @include outer-container()
-  @include padding(em(50) 0 em(28) 0)
+  @include padding(em(50) em(15) em(28))
   @include clearfix
   @include media(min-width $mobile)
-    @include padding(em(79) 0 em(96) 0)
+    @include padding(em(79) em(15) em(96))
   &.collapsed
     padding: 0
 

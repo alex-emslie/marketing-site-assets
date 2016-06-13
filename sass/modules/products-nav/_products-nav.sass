@@ -21,6 +21,9 @@
     svg
       position: absolute
       top: 35px
+      display: none
+      @include media(min-width $desktop)
+        display: block
     @include transition(background 0.3s ease)
     @include media(min-width 1100px)
       height: em(178)
