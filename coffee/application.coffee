@@ -79,19 +79,6 @@ class Megapane
 $ ->
 
   ad = ad || {}
-<<<<<<< Updated upstream
-  subdomain = window.location.host.split('.')[0]
-  switch subdomain
-    when 'www'
-      # production
-      svgs_url = 'http://info.appdirect.com/assets_new/svg/svgs.svg'
-    when 'ad-dc'
-      # github / project-runway
-      svgs_url = './assets_new/svg/svgs.svg'
-    else
-      # dev, staging, local, info.appdirect
-      svgs_url = '/assets_new/svg/svgs.svg'
-=======
   ###############
   # SVG LOCATIONS
   ###############
@@ -101,7 +88,7 @@ $ ->
     svgs_url = 'http://info.appdirect.com/assets_new/svg/svgs.svg'
   else
     svgs_url = '/assets_new/svg/svgs.svg'
->>>>>>> Stashed changes
+
   $.get svgs_url, (data) ->
     div = document.createElement("div")
     div.className = "svgstore"
