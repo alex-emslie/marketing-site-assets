@@ -23,6 +23,37 @@
 .tab-content-image img
   min-width: 90%
 
+.four-up-with-intro
+  background: #000
+  color: #fff
+  .intro-text
+    border-bottom: 1px solid #3f4041
+    padding: 0 20px 20px 20px
+    @include media(min-width $tablet)
+      padding: 0 40px 20px 40px
+    h2
+      @extend %headings-1
+      color: $blue
+    p
+      font-size: 20px
+  .four-up
+    
+  ul
+    @extend %no-style-list
+  li
+    text-align: center
+  svg
+    width: 100px
+  .col
+    padding: 40px 20px
+    @include span-columns(6)
+    border-right: 1px solid #3f4041
+    border-bottom: 1px solid #3F4041
+    @include media(min-width $tablet)
+      @include span-columns(3)
+      border-bottom: 0
+      height: 450px
+
 .graph
   .grid
     img
