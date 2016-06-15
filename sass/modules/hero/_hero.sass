@@ -9,13 +9,10 @@
   &.constrained
     height: 480px
     min-height: 0
-<<<<<<< Updated upstream
   &.w-padding
     padding-top: 70px
-=======
     .hero-copy
       margin-top: 90px !important
->>>>>>> Stashed changes
 
   .container
     padding: 43px 0 0
@@ -60,6 +57,22 @@
       bottom: 50%
       right: 50%
       @include transform(translateX(50%) translateY(50%))
+
+.hero-callout
+  position: absolute
+  bottom: 0
+  text-align: center
+  width: 100%
+  .hero-background
+    opacity: 0.5
+    position: absolute
+    height: 100%
+    width: 100%
+  h2
+    margin: 0
+    line-height: 90px
+    position: relative
+    z-index: 100
 
 .hero-copy
   @include span-columns(12)
