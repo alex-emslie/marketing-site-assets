@@ -61,3 +61,29 @@
             border-right: 1px solid transparent
       p
         display: block !important
+  &.cards
+    background-image: none
+    background-color: $white
+    .card
+      background-size: cover
+      height: 425px
+      margin: 10px
+      position: relative
+      overflow: hidden
+      .copy
+        position: absolute
+        height: 100%
+        width: 100%
+        margin-top: 335px
+        background-color: #3F4041
+        @include transition(all 0.35s ease-in-out)
+        cursor: pointer
+        padding: 15px
+        p, a
+          opacity: 0
+          @include transition(all 0.25s ease-in-out)
+        &:hover
+          margin-top: 0
+          p, a
+            opacity: 1
+
