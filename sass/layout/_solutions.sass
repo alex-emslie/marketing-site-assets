@@ -38,7 +38,6 @@ body
   background: #000
   color: #fff
   .intro-text
-    border-bottom: 1px solid #3f4041
     padding: 0 20px 20px 20px
     @include media(min-width $tablet)
       padding: 0 40px 20px 40px
@@ -47,6 +46,9 @@ body
       color: $blue
     p
       font-size: 20px
+    .container
+      padding: 3em .9375em 0
+      text-align: center
   .four-up
     
   ul
@@ -55,15 +57,16 @@ body
     text-align: center
   svg
     width: 100px
-  .col
-    padding: 40px 20px
+  .col 
     @include span-columns(6)
-    border-right: 1px solid #3f4041
-    border-bottom: 1px solid #3F4041
     @include media(min-width $tablet)
       @include span-columns(3)
       border-bottom: 0
-      height: 450px
+    .content
+      background-color: $dark-gray
+      margin: 0 10px
+      padding: 40px 20px
+      height: 500px
 
 .graph
   .grid
