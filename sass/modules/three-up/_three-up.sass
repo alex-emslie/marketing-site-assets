@@ -36,18 +36,25 @@
       color: #fff
       .button
         @include button(true)
+        text-align: center
+    &.on-gray
+      background: $dark-gray
 
     @include media(min-width $tablet)
       height: 340px
-      text-align: left
+      text-align: center
       padding: 40px
       position: relative
       border-right: 1px solid #ADAEAF
       .button
         position: absolute
-        left: 40px
+        width: 45%
+        margin-left: auto
+        margin-right: auto
+        left: 0
+        right: 0
         bottom: 40px
-    
+        
   .featured-image
     max-height: 375px
     img
@@ -57,5 +64,5 @@
       opacity: .9
   .card
     margin: 0 10px
-    padding: 40px 20px
+    padding: 40px 10px
 
