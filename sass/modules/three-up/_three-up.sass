@@ -3,13 +3,13 @@
     @include row()
   .column
     @include span-columns(12)
-    &:hover
-      .featured-text
-        background: #fff
-        &.on-black
-          background: #111
-      .featured-image img
-        opacity: .99999
+    // &:hover
+    //   .featured-text
+    //     background: #fff
+    //     &.on-black
+    //       background: #111
+    //   .featured-image img
+    //     opacity: .99999
         
     @include media(min-width $tablet)
       @include span-columns(6)
@@ -39,13 +39,13 @@
         text-align: center
     &.on-gray
       background: $dark-gray
+      color: $white
 
     @include media(min-width $tablet)
       height: 340px
       text-align: center
       padding: 40px
       position: relative
-      border-right: 1px solid #ADAEAF
       .button
         position: absolute
         width: 45%
